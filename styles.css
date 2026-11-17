@@ -1,4 +1,4 @@
-/* Flixen-Inspired Visual CSS for Utkarsh Seth's Executive Portfolio */
+/* Nuestudio Style System for Utkarsh Seth */
 
 html {
   scroll-behavior: smooth;
@@ -10,58 +10,22 @@ html {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #070709;
+  background: #0a0a0c;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1b1d26;
+  background: #262936;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3b82f6;
+  background: #ff3344;
 }
 
-/* Filter Pills (Flixen Agency Style) */
-.filter-pill {
-  padding: 0.5rem 1.1rem;
-  border-radius: 9999px;
+/* Typography polish */
+h1, h2, h3, h4 {
+  letter-spacing: -0.03em;
+}
+
+/* Input custom styles */
+input[type="text"], select {
   font-family: 'Space Grotesk', monospace;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  background-color: #13141a;
-  color: #94a3b8;
-  border: 1px solid rgba(43, 46, 60, 0.7);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.filter-pill:hover {
-  color: #ffffff;
-  border-color: rgba(59, 130, 246, 0.5);
-}
-
-.filter-pill.active {
-  background-color: #3b82f6 !important;
-  color: #ffffff !important;
-  border-color: #3b82f6 !important;
-  box-shadow: 0 4px 18px rgba(59, 130, 246, 0.35);
-}
-
-/* Visual Card Zoom & Parallax */
-.campaign-card {
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
-}
-
-.campaign-card:hover {
-  transform: translateY(-5px);
-}
-
-.campaign-card .visual-container {
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.campaign-card:hover .visual-container {
-  border-color: rgba(59, 130, 246, 0.6);
-  box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.2);
 }
