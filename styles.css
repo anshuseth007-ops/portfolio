@@ -1,6 +1,5 @@
-/* Custom Styling & Micro-interactions for Utkarsh Seth's Executive Portfolio */
+/* Flixen-Inspired Visual CSS for Utkarsh Seth's Executive Portfolio */
 
-/* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
@@ -8,55 +7,61 @@ html {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #070a13;
+  background: #070709;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
-  border-radius: 4px;
+  background: #1b1d26;
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #3b82f6;
 }
 
-/* Card Glow Effect on Hover */
-.case-card {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
-}
-.case-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 30px -10px rgba(37, 99, 235, 0.15);
-}
-
-/* Glassmorphism helpers */
-.glass-panel {
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(51, 65, 85, 0.4);
+/* Filter Pills (Flixen Agency Style) */
+.filter-pill {
+  padding: 0.5rem 1.1rem;
+  border-radius: 9999px;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: #13141a;
+  color: #94a3b8;
+  border: 1px solid rgba(43, 46, 60, 0.7);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Subtle Pulsing Gradient Animation */
-@keyframes pulseGlow {
-  0%, 100% {
-    opacity: 0.15;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.25;
-    transform: scale(1.05);
-  }
+.filter-pill:hover {
+  color: #ffffff;
+  border-color: rgba(59, 130, 246, 0.5);
 }
 
-.ambient-glow {
-  animation: pulseGlow 8s infinite ease-in-out;
-}
-
-/* Filter button active styles */
-.filter-btn.active {
-  background-color: #2563eb !important;
+.filter-pill.active {
+  background-color: #3b82f6 !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39);
+  border-color: #3b82f6 !important;
+  box-shadow: 0 4px 18px rgba(59, 130, 246, 0.35);
+}
+
+/* Visual Card Zoom & Parallax */
+.campaign-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.campaign-card:hover {
+  transform: translateY(-5px);
+}
+
+.campaign-card .visual-container {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campaign-card:hover .visual-container {
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.2);
 }
