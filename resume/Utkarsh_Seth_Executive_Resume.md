@@ -54,6 +54,7 @@ Pioneer in **Generative AI Engine Optimization (AEO/GEO) and Reddit content seed
 ### **VIVO SMARTPHONES INDIA PVT. LTD.** | Gurgaon, India
 **Assistant Manager – Digital Marketing** | *Jan 2017 – Jan 2019*
 * **₹100 Cr+ Annual Media Scale**: Commanded ₹100 Cr+ annual media budgets across marquee sports properties including **Vivo IPL (Seasons 10 & 11)**, **FIFA World Cup 2018**, and **ProKabaddi League (Seasons 5 & 6)**.
+* **Vivo ViewTube Innovation (Shorty Award Winner)**: Conceived and executed landmark contextual video advertising campaign using Google Director Mix and 30-day YouTube search queries to dynamically render **550+ personalized DVC variations** starring brand ambassador Ranveer Singh.
 * **Record-Breaking Fan Engagement**: Conceived and executed `#PerfectFan`, driving **500K+ mentions** and recognized as the most engaging brand campaign in IPL history.
 * **Creator Community (#Vivographer)**: Founded the `#Vivographer` mobile photography platform, generating a **300% engagement lift**, 200% follower growth, and a 10K+ creator community within 6 months.
 * **Celebrity DVCs & GTM**: Directed high-production commercial films starring Aamir Khan and Ranveer Singh; led digital GTM for Vivo NEX, V9, and V11 — Vivo's 3 top-selling smartphones of 2018.
