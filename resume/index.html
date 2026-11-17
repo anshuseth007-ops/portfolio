@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utkarsh Seth - Executive Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-dark: #0f172a;
+      --accent: #2563eb;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --bg-pill: #f1f5f9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background-color: #f8fafc;
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
+
+    .resume-page {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 3rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border);
+    }
+
+    /* Print styling */
+    @media print {
+      body {
+        background: transparent;
+        padding: 0;
+      }
+      .resume-page {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+
+    /* Header */
+    .header {
+      border-bottom: 2px solid var(--primary-dark);
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .name {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.03em;
+    }
+
+    .title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-top: 0.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.8rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .contact-bar a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-bar a:hover {
+      color: var(--accent);
+    }
+
+    /* Section */
+    .section {
+      margin-bottom: 1.6rem;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary-dark);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .summary-text {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #334155;
+    }
+
+    /* Competencies Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem 1.2rem;
+      font-size: 0.85rem;
+    }
+
+    .skill-item strong {
+      color: var(--primary-dark);
+    }
+
+    /* Experience Items */
+    .exp-item {
+      margin-bottom: 1.3rem;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-company {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    .exp-role {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .exp-date {
+      font-size: 0.82rem;
+      font-family: 'Space Grotesk', monospace;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .exp-bullets {
+      list-style-type: disc;
+      padding-left: 1.2rem;
+      margin-top: 0.4rem;
+      font-size: 0.86rem;
+      color: #334155;
+    }
+
+    .exp-bullets li {
+      margin-bottom: 0.35rem;
+      line-height: 1.5;
+    }
+
+    .exp-bullets li strong {
+      color: var(--primary-dark);
+    }
+
+    /* Education & Awards */
+    .edu-item {
+      margin-bottom: 0.6rem;
+      font-size: 0.86rem;
+    }
+
+    .edu-degree {
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .edu-school {
+      color: var(--text-muted);
+    }
+
+    /* Print button banner */
+    .action-banner {
+      max-width: 900px;
+      margin: 0 auto 1.5rem auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1e293b;
+      color: #ffffff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+    }
+
+    .btn-print {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-print:hover {
+      background: #1d4ed8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Print Banner for Web Preview -->
+  <div class="action-banner no-print">
+    <div>
+      <strong>Executive Resume Preview</strong>
+      <span style="opacity: 0.7; font-size: 0.85rem; margin-left: 0.5rem;">Click button or press Cmd+P to save as clean PDF</span>
+    </div>
+    <button class="btn-print" onclick="window.print()">
+      <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/><path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/></svg>
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <div class="resume-page">
+    
+    <!-- Header -->
+    <header class="header">
+      <h1 class="name">UTKARSH SETH</h1>
+      <div class="title">VP & Head of Marketing | Digital, Brand & Growth Leader | AI-First Pioneer</div>
+      <div class="contact-bar">
+        <span>📍 Gurgaon, Haryana</span>
+        <span>📞 +91 9711133607</span>
+        <span>✉️ <a href="mailto:anshu.seth007@gmail.com">anshu.seth007@gmail.com</a></span>
+        <span>🔗 <a href="https://linkedin.com/in/utkarshseth1" target="_blank">linkedin.com/in/utkarshseth1</a></span>
+        <span>🌐 <a href="https://utkarshseth.vercel.app" target="_blank">utkarshseth.vercel.app</a></span>
+      </div>
+    </header>
+
+    <!-- Executive Summary -->
+    <section class="section">
+      <h2 class="section-title">Executive Summary</h2>
+      <p class="summary-text">
+        Accomplished Marketing Leader with <strong>13+ years of experience</strong> commanding brand and performance strategy from <strong>both sides of the table</strong> — as an in-house brand custodian directing agencies (<strong>Vivo, Micromax</strong>) and as an agency Account Director leading <strong>Samsung India's</strong> full digital mandate at Cheil. Proven track record managing <strong>₹100 Cr+ annual media investments</strong>, leading cross-functional teams of 15+, and driving multi-billion-rupee flagship GTMs. Pioneer in <strong>Generative AI Engine Optimization (AEO/GEO) and Reddit content seeding</strong>, establishing one of India's first enterprise frameworks to maximize brand Share of Model (SoM) across ChatGPT, Gemini, and Perplexity. Combines mathematical media rigour (6x Google Ads Digital Guru certified, IIT Delhi CEP) with cultural storytelling instinct (2x Guinness World Records, Clio Sports Award winner, TVF integrations, IPL & Olympic campaigns).
+      </p>
+    </section>
+
+    <!-- Core Competencies -->
+    <section class="section">
+      <h2 class="section-title">Core Competencies & Leadership Scope</h2>
+      <div class="skills-grid">
+        <div class="skill-item"><strong>Executive Leadership:</strong> P&L Ownership, Team Leadership (15+), Agency Governance</div>
+        <div class="skill-item"><strong>AI-First Marketing:</strong> Generative Engine Optimization (AEO/GEO), Reddit Seeding, LLM RAG Ingestion</div>
+        <div class="skill-item"><strong>Performance & Media:</strong> ₹100 Cr+ Scale Bidding, DV360, PMax, Search, Meta CAPI, Attribution (MMM)</div>
+        <div class="skill-item"><strong>Pop Culture & Brand IPs:</strong> 2x Guinness World Records, Paris Olympics 2024, Esports (#PlayGalaxy), TVF</div>
+        <div class="skill-item"><strong>Commerce & Growth:</strong> D2C Conversion Funnels, Amazon & Flipkart Retail Media, CAC/LTV Management</div>
+        <div class="skill-item"><strong>MarTech & Analytics:</strong> Google Analytics 4, Sprinklr, Brandwatch, IBM SPSS, Reddit API, Gemini/ChatGPT</div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section">
+      <h2 class="section-title">Professional Experience</h2>
+
+      <!-- Cheil India -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-company">Cheil India (Samsung India Full Account)</span>
+            <span style="color: var(--text-muted); margin: 0 0.4rem;">|</span>
+            <span class="exp-role">Account Director – Social, Content & Digital</span>
+          </div>
+          <span class="exp-date">Mar 2023 – Present</span>
+        </div>
+        <ul class="exp-bullets">
+          <li><strong>Full Digital Mandate Ownership:</strong> Commanded Samsung India's end-to-end digital strategy, performance media, social, and creator ecosystem across Smartphones and Consumer Electronics.</li>
+          <li><strong>Pioneered AI-First Marketing (AEO/GEO):</strong> Architected India's first enterprise Gen AI Engine Optimization and Reddit seeding methodology (r/Android, r/Samsung, r/gadgets) for Galaxy S25 & S26 flagships, driving decisive Share of Model (SoM) across ChatGPT, Gemini, and Perplexity.</li>
+          <li><strong>2x Guinness World Records:</strong> Spearheaded the pan-India <em>India #WithGalaxy</em> photography challenge with filmmaker Kabir Khan and 30+ regional creators, earning two Guinness World Records with 31,000+ submissions.</li>
+          <li><strong>Clio Sports Award Campaign:</strong> Co-produced and amplified the <em>#IndiaCheersNeeraj</em> Paris Olympics 2024 movement featuring Neeraj Chopra; drove 343K+ conversations and won Bronze at Clio Sports.</li>
+          <li><strong>Gaming & Esports IP (#PlayGalaxy):</strong> Co-led tournament strategy with CarryMinati and Techno Gamerz on Galaxy devices, scaling viewership to 350M+ cumulative reach by Season 4.</li>
+          <li><strong>Branded Content Integrations:</strong> Co-produced native storyline integrations with TVF into <em>Panchayat</em> (Phulera village) and <em>Permanent Roommates</em>, generating viral organic recall.</li>
+          <li><strong>Media & Team Leadership:</strong> Managed daily media allocations up to ₹10 Lakhs; mentored and directed a 15+ member cross-functional digital team.</li>
+        </ul>
+      </div>
+
+      <!-- Micromax -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-company">Micromax Smartphones (IN Mobiles)</span>
+            <span style="color: var(--text-muted); margin: 0 0.4rem;">|</span>
+            <span class="exp-role">Digital Marketing Head – Brand & Marketing</span>
+          </div>
+          <span class="exp-date">Mar 2021 – Dec 2022</span>
+        </div>
+        <ul class="exp-bullets">
+          <li><strong>C-Suite Direct Ownership:</strong> Owned digital strategy end-to-end, reporting directly to the CEO on growth P&L, budget pipeline, and customer acquisition.</li>
+          <li><strong>Agency Governance:</strong> Directed agency partners (Havas Media & PR Pundit) as brand custodian across performance media, PR, ORM, and creative production.</li>
+          <li><strong>D2C & Marketplace Acceleration:</strong> Scaled sales funnels with Flipkart and Amazon through optimized PDP listings and high-intent retail search advertising.</li>
+        </ul>
+      </div>
+
+      <!-- Showtime Events -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-company">Showtime Events</span>
+            <span style="color: var(--text-muted); margin: 0 0.4rem;">|</span>
+            <span class="exp-role">Manager – Digital Marketing</span>
+          </div>
+          <span class="exp-date">Jun 2019 – Feb 2021</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Led full-service digital campaigns across SEM, SEO, paid social, and content for <strong>Tata Motors, Johnson & Johnson, and Hero Motocorp</strong>.</li>
+          <li>Developed marketing mix modeling (MMM) and comprehensive multi-touch attribution dashboards.</li>
+        </ul>
+      </div>
+
+      <!-- Vivo -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-company">Vivo Smartphones India Pvt. Ltd.</span>
+            <span style="color: var(--text-muted); margin: 0 0.4rem;">|</span>
+            <span class="exp-role">Assistant Manager – Digital Marketing</span>
+          </div>
+          <span class="exp-date">Jan 2017 – Jan 2019</span>
+        </div>
+        <ul class="exp-bullets">
+          <li><strong>₹100 Cr+ Annual Media Scale:</strong> Commanded ₹100 Cr+ annual media deployment across Vivo IPL (Seasons 10 & 11) and FIFA World Cup 2018.</li>
+          <li><strong>Record-Breaking Campaigns:</strong> Launched <em>#PerfectFan</em> (500K+ mentions, #1 IPL campaign) and founded <em>#Vivographer</em> (300% engagement lift, 10K+ creator community).</li>
+          <li><strong>Celebrity DVCs & Flagship GTM:</strong> Directed commercial films starring Aamir Khan and Ranveer Singh; led GTM for Vivo NEX, V9, and V11 (top-selling phones of 2018).</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- Education & Certifications -->
+    <section class="section">
+      <h2 class="section-title">Education & Executive Certifications</h2>
+      <div class="edu-item">
+        <span class="edu-degree">IIT Delhi – DMS (2017):</span>
+        <span class="edu-school">Executive Management Programme in Strategic Innovations, Digital Marketing & Business Analytics (CEP)</span>
+      </div>
+      <div class="edu-item">
+        <span class="edu-degree">Google Ads Digital Guru Certified (All 6 Modules):</span>
+        <span class="edu-school">Search, Performance Max, Demand Gen, DV360, Apps, and Performance — Awarded by Sanjay Gupta, President Asia Pacific, Google</span>
+      </div>
+      <div class="edu-item">
+        <span class="edu-degree">Honors & Awards:</span>
+        <span class="edu-school">2x Guinness World Records (India #WithGalaxy) | Bronze Award, Clio Sports (Direction & Editing for #IndiaCheersNeeraj)</span>
+      </div>
+      <div class="edu-item">
+        <span class="edu-degree">Bachelor of Computer Applications (BCA):</span>
+        <span class="edu-school">IGNOU (Distance)</span>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
