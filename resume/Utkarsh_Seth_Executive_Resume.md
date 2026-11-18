@@ -14,11 +14,11 @@ Pioneer in **Generative AI Engine Optimization (AEO/GEO) and Reddit content seed
 
 ## CORE COMPETENCIES & LEADERSHIP SKILLS
 
-* **Executive Strategy & Governance**: Full-funnel Marketing Leadership, P&L Accountability, Multi-Agency Governance, Team Leadership (15+).
+* **Social & Content Strategy**: Always-On Social Engine, Short-Form Video & Reels, Creator & Influencer Networks, Trendjacking, Social Listening & Sentiment (Sprinklr, Brandwatch).
 * **Next-Gen AI & Search**: Generative Engine Optimization (AEO/GEO), Reddit Seeding & Community Strategy, Share of Model (SoM) Tracking, LLM Ingestion.
 * **Performance & Paid Media**: ₹100 Cr+ Scale Bidding, Google Ads (Search, PMax, Demand Gen, Apps), DV360, Meta Ads CAPI, Incrementality Testing, MMM.
 * **Culture, Entertainment & IP**: Effie India 2025 Winner (9 Metals), 2x Guinness World Records, Olympic Amplification (Paris 2024), Esports (#PlayGalaxy), TVF Integrations.
-* **Commerce & Conversion**: D2C Funnel Optimization, Amazon & Flipkart Retail Media, CAC/LTV Management, E-commerce CRO.
+* **Executive Strategy & Commerce**: P&L Accountability, Multi-Agency Governance, Team Leadership (15+), D2C Funnel Optimization, Amazon & Flipkart Retail Media.
 
 ---
 
@@ -34,14 +34,13 @@ Pioneer in **Generative AI Engine Optimization (AEO/GEO) and Reddit content seed
 
 ### **CHEIL INDIA (Samsung India Account)** | Gurgaon, India
 **Account Director – Social, Content & Digital** | *Mar 2023 – Aug 2026*
+* **Social & Content Strategy Leadership**: Commanded Samsung India's complete social mandate and dedicated team across Smartphones, TVs, and Consumer Electronics — architecting the always-on short-form/Reels engine, creator networks, cultural trendjacking, and real-time social listening (Sprinklr/Brandwatch) that consistently drove industry-leading engagement.
 * **Effie India 2025 (2x Gold, 5x Silver, 1x Bronze)**: Stewarded campaigns that swept 9 Effie metals across four Samsung mandates — Galaxy A16 5G "Small Village Out-influenced the Influencers" (Gold: Influencer Marketing), Galaxy Empowered "Authority Crisis" (Gold: Education), Galaxy S24 "Trojan Horse vs. Apple" (2x Silver), and Galaxy Watch campaigns (Silver + Bronze).
-* **Full Digital Mandate Ownership**: Commanded Samsung India's digital strategy, social media, performance marketing, search, and influencer ecosystem across Smartphones, TVs, Home Appliances, and Wearables.
 * **Pioneered AI-First Marketing (AEO/GEO)**: Architected and deployed India's first enterprise Generative Engine Optimization framework for Galaxy S25 and S26 flagships, engineering structured content schemas and high-authority Reddit seeding (`r/Android`, `r/Samsung`, `r/gadgets`) to capture dominant Share of Model in ChatGPT, Gemini, and Perplexity.
-* **Guinness World Records**: Spearheaded the nationwide *India #WithGalaxy* campaign with filmmaker Kabir Khan and 30+ regional photographers, securing **two Guinness World Records** (Largest Smartphone Photography Competition with 31,000+ entries and Largest Online Photo Mosaic).
+* **Guinness World Records**: Spearheaded the nationwide *India #WithGalaxy* campaign with filmmaker Kabir Khan and 30+ regional creators, securing **two Guinness World Records** (Largest Smartphone Photography Competition with 31,000+ entries and Largest Online Photo Mosaic).
 * **Clio Sports Award Campaign**: Co-produced and amplified the *#IndiaCheersNeeraj* cinematic brand movement for Paris Olympics 2024 showcasing Neeraj Chopra's training with Galaxy Z Fold6/Flip6 AI; drove **343K+ organic conversations** across cinema, digital, and print, winning **Bronze at Clio Sports**.
-* **Gaming & Esports IP (#PlayGalaxy)**: Co-led multi-season gaming tournaments uniting India’s top creators (CarryMinati, Techno Gamerz) on Galaxy flagships, scaling viewership to **350M+ cumulative reach across 4 seasons**.
-* **Branded Content & Pop Culture**: Partnered with The Viral Fever (TVF) to co-produce narrative integrations for Galaxy devices into cultural phenomena (*Panchayat* Phulera village and *Permanent Roommates*), achieving viral organic recall.
-* **Media Investment & Team Leadership**: Directed daily media deployments up to ₹10 Lakhs; mentored and led a high-performing 15+ member digital team.
+* **Gaming & Esports IP (#PlayGalaxy)**: Co-led multi-season gaming tournaments uniting India’s top creators (CarryMinati, Techno Gamerz) on Galaxy flagships, scaling viewership to **350M+ cumulative reach across 4 seasons**. Partnered with TVF to integrate Galaxy devices into cultural phenomena (*Panchayat* and *Permanent Roommates*).
+* **Media Investment & Team Leadership**: Directed daily media deployments up to ₹10 Lakhs; recruited, mentored, and led a high-performing 15+ member social, creative, and performance team.
 
 ---
 
