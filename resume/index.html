@@ -202,7 +202,7 @@
       .page {
         box-shadow:none; border-radius:0;
         max-width:100%; width:100%;
-        /* Force fit to exactly 2 A4 pages */
+        min-height:100%;
       }
       /* Preserve dark sidebar bg */
       .sidebar { background:var(--sidebar) !important; }
@@ -212,8 +212,7 @@
       .c-green { background:#d1fae5 !important; color:#065f46 !important; }
       .c-purple{ background:#ede9fe !important; color:#5b21b6 !important; }
       .aw-badge{ background:var(--gold) !important; }
-      .exp-item { page-break-inside: avoid; }
-      @page { size: A4; margin: 0.45in 0.4in; }
+      @page { size: 8.5in 16.2in; margin: 0; }
     }
   </style>
 </head>
