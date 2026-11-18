@@ -24,8 +24,16 @@ Pioneer in **Generative AI Engine Optimization (AEO/GEO) and Reddit content seed
 
 ## PROFESSIONAL EXPERIENCE
 
+### **INDEPENDENT BRAND & GROWTH ADVISOR** | Gurgaon, India
+**D2C Venture Incubation (Aquante & Morpatra)** | *Aug 2026 – Present*
+* **0-to-1 Brand Incubation**: Led go-to-market strategy, brand identity, and e-commerce infrastructure development for emerging consumer ventures in premium lifestyle (Aquante) and handcrafted goods (Morpatra).
+* **Digital & Storefront Architecture**: Built scalable D2C storefronts, conversion funnels, brand visual identity, and organic acquisition frameworks from the ground up.
+* **Operational Handover**: Successfully established initial commercial foundation and transitioned ongoing day-to-day operations to dedicated family partners to focus 100% on full-time enterprise marketing leadership mandates.
+
+---
+
 ### **CHEIL INDIA (Samsung India Account)** | Gurgaon, India
-**Account Director – Social, Content & Digital** | *Mar 2023 – Present*
+**Account Director – Social, Content & Digital** | *Mar 2023 – Aug 2026*
 * **Full Digital Mandate Ownership**: Commanded Samsung India's digital strategy, social media, performance marketing, search, and influencer ecosystem across Smartphones and Consumer Electronics.
 * **Pioneered AI-First Marketing (AEO/GEO)**: Architected and deployed India's first enterprise Generative Engine Optimization framework for Galaxy S25 and S26 flagships, engineering structured content schemas and high-authority Reddit seeding (`r/Android`, `r/Samsung`, `r/gadgets`) to capture dominant Share of Model in ChatGPT, Gemini, and Perplexity.
 * **Guinness World Records**: Spearheaded the nationwide *India #WithGalaxy* campaign with filmmaker Kabir Khan and 30+ regional photographers, securing **two Guinness World Records** (Largest Smartphone Photography Competition with 31,000+ entries and Largest Online Photo Mosaic).

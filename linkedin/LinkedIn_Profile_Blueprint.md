@@ -74,15 +74,29 @@ Pin the following items at the top of your profile:
 
 ## 4. Experience Section (Optimized for LinkedIn Recruiter)
 
-### Role 1: Cheil India
-**Title:** Account Director – Social, Content & Digital  
-**Company:** Cheil India · Full-time  
-**Dates:** Mar 2023 – Present · 2+ yrs  
+### Role 1: Independent Brand & Growth Advisor
+**Title:** Independent Brand & Growth Advisor  
+**Company:** D2C Venture Incubation (Aquante & Morpatra) · Contract / Advisory  
+**Dates:** Aug 2026 – Present  
 **Location:** Gurgaon, Haryana, India · Hybrid  
 
 **Description:**
 ```text
-Owning Samsung India's full digital mandate across flagship Smartphones and Consumer Electronics. Directing a 15+ member cross-functional digital team across paid media, social strategy, content production, and influencer partnerships.
+Providing 0-to-1 go-to-market and digital storefront advisory for emerging consumer lifestyle brands:
+• Led digital branding, packaging aesthetics, and e-commerce infrastructure for Aquante (luxury living) and Morpatra (handcrafted goods).
+• Architected Shopify storefronts, conversion funnels, and organic acquisition frameworks from the ground up.
+• Successfully established initial commercial foundations and transitioned day-to-day operational management to dedicated family partners to focus 100% on full-time enterprise marketing leadership mandates.
+```
+
+### Role 2: Cheil India
+**Title:** Account Director – Social, Content & Digital  
+**Company:** Cheil India · Full-time  
+**Dates:** Mar 2023 – Aug 2026 · 3 yrs 6 mos  
+**Location:** Gurgaon, Haryana, India · Hybrid  
+
+**Description:**
+```text
+Entirely owned Samsung India's full digital mandate across flagship Smartphones and Consumer Electronics. Directed a 15+ member cross-functional digital team across paid media, social strategy, content production, and influencer partnerships.
 
 Key Accomplishments:
 • AI-First Marketing Pioneer: Architected India’s first large-scale Gen AI Engine Optimization (AEO/GEO) and Reddit seeding methodology for Galaxy S25 & S26 launches, establishing dominant Share of Model across ChatGPT, Perplexity, Gemini, and Copilot.
