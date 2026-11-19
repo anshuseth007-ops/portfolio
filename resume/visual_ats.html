@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utkarsh Seth – Executive Visual ATS Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:      #0d1b2a;
+      --navy-lt:   #1b2d42;
+      --blue:      #1a56db;
+      --blue-lt:   #eff6ff;
+      --slate:     #334155;
+      --muted:     #64748b;
+      --rule:      #e2e8f0;
+      --gold:      #b45309;
+      --gold-bg:   #fef3c7;
+      --gold-txt:  #92400e;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f8fafc;
+      color: var(--slate);
+      line-height: 1.45;
+      padding: 1.5rem 1rem;
+    }
+
+    .resume-card {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      border: 1px solid var(--rule);
+    }
+
+    /* ═══════════════ HEADER HERO ═══════════════ */
+    .hero-header {
+      background: var(--navy);
+      color: #ffffff;
+      padding: 1.8rem 2rem 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+    }
+
+    .hero-photo {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid rgba(255,255,255,0.2);
+      flex-shrink: 0;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+    }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+
+    .hero-content { flex: 1; }
+    .hero-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.1rem;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      color: #ffffff;
+    }
+    .hero-tagline {
+      font-size: 0.74rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #93c5fd;
+      margin-top: 0.35rem;
+    }
+
+    .hero-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.2rem;
+      margin-top: 0.75rem;
+      font-size: 0.73rem;
+      color: rgba(255,255,255,0.8);
+    }
+    .contact-item { display: flex; align-items: center; gap: 0.4rem; }
+    .contact-item a { color: #ffffff; text-decoration: none; }
+    .contact-item a:hover { text-decoration: underline; }
+
+    /* ═══════════════ METRICS STRIP ═══════════════ */
+    .metrics-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: #f1f5f9;
+      border-bottom: 1px solid var(--rule);
+    }
+    .metric-box {
+      padding: 0.75rem 0.6rem;
+      text-align: center;
+      border-right: 1px solid var(--rule);
+    }
+    .metric-box:last-child { border-right: none; }
+    .metric-num {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--blue);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+    .metric-label {
+      font-size: 0.62rem;
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-top: 0.15rem;
+    }
+
+    /* ═══════════════ MAIN BODY ═══════════════ */
+    .body-content {
+      padding: 1.6rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+    }
+
+    /* Section Headers */
+    .sec-heading {
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.55rem;
+    }
+    .sec-heading::after {
+      content: '';
+      flex: 1;
+      height: 1.5px;
+      background: #e2e8f0;
+    }
+
+    .summary-p {
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: #334155;
+      text-align: justify;
+    }
+    .summary-p strong { color: var(--navy); font-weight: 700; }
+
+    /* Competencies Grid */
+    .skills-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.55rem 1.2rem;
+    }
+    .skill-group { font-size: 0.74rem; }
+    .skill-title {
+      font-weight: 700;
+      color: var(--navy);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .tags-row { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .tag-chip {
+      font-size: 0.62rem;
+      background: #f1f5f9;
+      color: #1e293b;
+      padding: 0.12rem 0.45rem;
+      border-radius: 4px;
+      font-weight: 500;
+      border: 1px solid #e2e8f0;
+    }
+
+    /* Experience Timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .role-card {
+      border-left: 2.5px solid #cbd5e1;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .role-card.highlight { border-left-color: var(--blue); }
+    .role-card::before {
+      content: '';
+      position: absolute;
+      left: -4.5px;
+      top: 5px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+
+    .role-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .role-company {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+    .role-subnote { font-size: 0.75rem; font-weight: 400; color: var(--muted); }
+    .role-title {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--blue);
+      margin-top: 0.08rem;
+    }
+    .role-date {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--muted);
+      background: #f1f5f9;
+      padding: 0.12rem 0.5rem;
+      border-radius: 20px;
+    }
+
+    .role-bullets {
+      list-style: none;
+      margin-top: 0.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.28rem;
+    }
+    .role-bullets li {
+      font-size: 0.77rem;
+      color: #334155;
+      padding-left: 0.9rem;
+      position: relative;
+      line-height: 1.5;
+    }
+    .role-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-size: 0.65rem;
+      top: 1px;
+    }
+    .role-bullets li strong { color: var(--navy); font-weight: 700; }
+
+    /* Badges / Chips */
+    .chip-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.45rem;
+    }
+    .badge {
+      font-size: 0.62rem;
+      font-weight: 700;
+      padding: 0.14rem 0.5rem;
+      border-radius: 20px;
+      letter-spacing: 0.01em;
+    }
+    .badge-gold { background: var(--gold-bg); color: var(--gold-txt); border: 1px solid #fde68a; }
+    .badge-blue { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
+    .badge-green{ background: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
+    .badge-purple{ background: #ede9fe; color: #5b21b6; border: 1px solid #ddd6fe; }
+
+    /* Awards Grid */
+    .awards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem 1rem;
+    }
+    .award-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 0.5rem 0.7rem;
+      font-size: 0.72rem;
+    }
+    .award-badge-label {
+      display: inline-block;
+      background: var(--gold);
+      color: #fff;
+      font-size: 0.58rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+      margin-bottom: 0.2rem;
+    }
+    .award-name { font-weight: 700; color: var(--navy); line-height: 1.3; }
+    .award-sub { color: var(--muted); font-size: 0.65rem; margin-top: 0.1rem; }
+
+    /* Education */
+    .edu-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .edu-card {
+      font-size: 0.76rem;
+      line-height: 1.4;
+    }
+    .edu-card strong { color: var(--navy); }
+    .edu-card span { color: var(--muted); font-size: 0.7rem; }
+
+    /* Print Bar */
+    .top-actions {
+      max-width: 860px;
+      margin: 0 auto 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--navy);
+      color: #fff;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+    }
+    .btn-act {
+      background: var(--blue);
+      color: #fff;
+      border: none;
+      padding: 0.4rem 0.95rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .btn-act:hover { background: #1649c5; }
+
+    /* ═══════════════ PRINT ENGINE OPTIMIZATION ═══════════════ */
+    @media print {
+      body { background: transparent; padding: 0; margin: 0; }
+      .top-actions { display: none !important; }
+      .resume-card {
+        box-shadow: none;
+        border-radius: 0;
+        border: none;
+        max-width: 100%;
+        width: 100%;
+      }
+      .hero-header { background: var(--navy) !important; color: #fff !important; }
+      .metrics-strip { background: #f1f5f9 !important; }
+      .badge-gold { background: var(--gold-bg) !important; color: var(--gold-txt) !important; }
+      .badge-blue { background: #dbeafe !important; color: #1e40af !important; }
+      .badge-green { background: #d1fae5 !important; color: #065f46 !important; }
+      .badge-purple { background: #ede9fe !important; color: #5b21b6 !important; }
+      .award-badge-label { background: var(--gold) !important; color: #fff !important; }
+      .role-card { page-break-inside: avoid; break-inside: avoid; }
+      .award-card { page-break-inside: avoid; break-inside: avoid; }
+      @page {
+        size: A4;
+        margin: 0.4in 0.45in;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Web Actions Banner -->
+  <div class="top-actions">
+    <div>
+      <strong>Utkarsh Seth — Executive Visual ATS Resume</strong>
+      <span style="opacity:0.6; margin-left:0.5rem;">Visual Impact + 100% ATS Readable</span>
+    </div>
+    <div style="display:flex; gap:0.5rem;">
+      <button class="btn-act" onclick="window.print()">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+        Save as PDF
+      </button>
+    </div>
+  </div>
+
+  <div class="resume-card">
+
+    <!-- 1. HERO HEADER (Contains Portrait + Identity + Direct Contact) -->
+    <header class="hero-header">
+      <div class="hero-photo">
+        <img src="../assets/utkarsh_portrait.jpg" alt="Utkarsh Seth">
+      </div>
+      <div class="hero-content">
+        <h1 class="hero-name">Utkarsh Seth</h1>
+        <div class="hero-tagline">Account Director – Samsung India &nbsp;·&nbsp; Digital &amp; Brand Marketing Leader &nbsp;·&nbsp; AI-First Pioneer &nbsp;·&nbsp; ₹100 Cr+ Media</div>
+        <div class="hero-contact">
+          <div class="contact-item">
+            <span>📍 Gurgaon, Haryana, India</span>
+          </div>
+          <div class="contact-item">
+            <span>📞 +91 9711133607</span>
+          </div>
+          <div class="contact-item">
+            <span>✉️ <a href="mailto:anshu.seth007@gmail.com">anshu.seth007@gmail.com</a></span>
+          </div>
+          <div class="contact-item">
+            <span>🔗 <a href="https://linkedin.com/in/utkarshseth1" target="_blank">linkedin.com/in/utkarshseth1</a></span>
+          </div>
+          <div class="contact-item">
+            <span>🌐 <a href="https://portfolio-utkarsh-seth.vercel.app" target="_blank">portfolio-utkarsh-seth.vercel.app</a></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. EXECUTIVE METRICS CALLOUT STRIP -->
+    <div class="metrics-strip">
+      <div class="metric-box">
+        <div class="metric-num">13+</div>
+        <div class="metric-label">Years Leadership</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-num">₹100 Cr+</div>
+        <div class="metric-label">Annual Media Managed</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-num">9 Metals</div>
+        <div class="metric-label">Effie India 2025</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-num">350M+</div>
+        <div class="metric-label">Esports IP Reach</div>
+      </div>
+    </div>
+
+    <div class="body-content">
+
+      <!-- 3. EXECUTIVE SUMMARY -->
+      <section>
+        <h2 class="sec-heading">Executive Summary</h2>
+        <p class="summary-p">
+          Accomplished Marketing Leader with <strong>13+ years of experience</strong> commanding brand and performance strategy from <strong>both sides of the table</strong> — as an in-house brand custodian directing agencies (<strong>Vivo, Micromax</strong>) and as an agency Account Director commanding <strong>Samsung India's</strong> full digital mandate at Cheil. Proven track record managing <strong>₹100 Cr+ annual media investments</strong>, leading cross-functional teams of 15+, and driving multi-billion-rupee flagship GTMs. Pioneer of <strong>Generative AI Engine Optimization (AEO/GEO)</strong> and Reddit brand seeding at enterprise scale. Combines data rigour (6× Google Ads Digital Guru, IIT Delhi CEP) with cultural storytelling: <strong>Effie India 2025 (2× Gold, 5× Silver), 2× Guinness World Records, Clio Sports Bronze, and Shorty Award</strong>.
+        </p>
+      </section>
+
+      <!-- 4. CORE COMPETENCIES & TECHNICAL SKILLS -->
+      <section>
+        <h2 class="sec-heading">Core Competencies &amp; Leadership Skills</h2>
+        <div class="skills-container">
+          <div class="skill-group">
+            <span class="skill-title">Social &amp; Content Strategy</span>
+            <div class="tags-row">
+              <span class="tag-chip">Social Team Leadership</span>
+              <span class="tag-chip">Always-On Content Engine</span>
+              <span class="tag-chip">Short-Form Video / Reels</span>
+              <span class="tag-chip">Creator Collabs</span>
+              <span class="tag-chip">Social Listening (Sprinklr, Brandwatch)</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <span class="skill-title">AI-First Marketing &amp; Search</span>
+            <div class="tags-row">
+              <span class="tag-chip">AEO / GEO</span>
+              <span class="tag-chip">Reddit Seeding (r/Android, r/Samsung)</span>
+              <span class="tag-chip">Share of Model (SoM)</span>
+              <span class="tag-chip">LLM RAG Ingestion</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <span class="skill-title">Performance Media &amp; Attribution</span>
+            <div class="tags-row">
+              <span class="tag-chip">₹100 Cr+ Scale Bidding</span>
+              <span class="tag-chip">DV360</span>
+              <span class="tag-chip">Google PMax &amp; Search</span>
+              <span class="tag-chip">Meta Ads CAPI</span>
+              <span class="tag-chip">Marketing Mix Modeling (MMM)</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <span class="skill-title">Brand, Commerce &amp; Analytics</span>
+            <div class="tags-row">
+              <span class="tag-chip">0-to-1 D2C Incubation</span>
+              <span class="tag-chip">Amazon &amp; Flipkart Retail Media</span>
+              <span class="tag-chip">E-Commerce CRO</span>
+              <span class="tag-chip">Google Analytics 4 (GA4)</span>
+              <span class="tag-chip">P&amp;L Ownership</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. PROFESSIONAL EXPERIENCE -->
+      <section>
+        <h2 class="sec-heading">Professional Experience</h2>
+        <div class="timeline">
+
+          <!-- D2C -->
+          <div class="role-card">
+            <div class="role-header">
+              <div>
+                <span class="role-company">D2C Brand Incubation — Aquante &amp; Morpatra</span>
+                <div class="role-title">Independent Brand &amp; Growth Advisor</div>
+              </div>
+              <span class="role-date">Aug 2026 – Present</span>
+            </div>
+            <ul class="role-bullets">
+              <li><strong>0-to-1 Brand Architecture:</strong> Built brand identity, e-commerce infrastructure, and GTM for two emerging consumer ventures in premium lifestyle (Aquante) and handcrafted goods (Morpatra).</li>
+              <li><strong>Storefront &amp; Funnel Engineering:</strong> Scaled digital storefronts, conversion funnels, and organic acquisition frameworks utilizing AI-assisted creative workflows.</li>
+              <li><strong>Operational Handover:</strong> Established commercial foundations and transitioned day-to-day operations to dedicated family partners — <strong>100% available for enterprise leadership roles</strong>.</li>
+            </ul>
+            <div class="chip-container">
+              <span class="badge badge-blue">D2C GTM</span>
+              <span class="badge badge-green">E-Commerce CRO</span>
+              <span class="badge badge-purple">AI Workflow</span>
+            </div>
+          </div>
+
+          <!-- Cheil -->
+          <div class="role-card highlight">
+            <div class="role-header">
+              <div>
+                <span class="role-company">Cheil India <span class="role-subnote">(Samsung India Full Digital Account)</span></span>
+                <div class="role-title">Account Director — Social, Content &amp; Digital</div>
+              </div>
+              <span class="role-date">Mar 2023 – Aug 2026</span>
+            </div>
+            <ul class="role-bullets">
+              <li><strong>Social &amp; Content Strategy Leadership:</strong> Commanded Samsung India's complete social mandate and dedicated team across Smartphones, TVs, and Consumer Electronics — architecting the always-on short-form/Reels engine, creator networks, cultural trendjacking, and real-time social listening (Sprinklr/Brandwatch) that consistently drove industry-leading engagement.</li>
+              <li><strong>Effie India 2025 (9 Metals):</strong> Won 2× Gold, 5× Silver, 1× Bronze across four Samsung mandates — Galaxy A16 "Small Village Out-influenced the Influencers" (Gold: Influencer Marketing), Galaxy Empowered "Authority Crisis" (Gold: Education), Galaxy S24 "Trojan Horse vs. Apple" (2× Silver), and Galaxy Watch campaigns (Silver + Bronze).</li>
+              <li><strong>AEO / GEO Pioneer:</strong> Architected India's first enterprise Gen AI Engine Optimization + high-authority Reddit seeding (r/Android, r/Samsung, r/gadgets) for Galaxy S25 &amp; S26 flagships, boosting Share of Model across ChatGPT, Gemini, and Perplexity.</li>
+              <li><strong>2× Guinness World Records:</strong> Led pan-India <em>India #WithGalaxy</em> photography challenge with filmmaker Kabir Khan and 30+ regional creators, earning two Guinness World Records with 31,000+ verified submissions.</li>
+              <li><strong>Clio Sports Bronze:</strong> Co-produced and amplified <em>#IndiaCheersNeeraj</em> Paris Olympics 2024 movement; drove 343K+ conversations, winning Clio Sports Bronze (Direction &amp; Editing).</li>
+              <li><strong>Esports IP &amp; Entertainment:</strong> Co-led <em>#PlayGalaxy</em> gaming tournament with CarryMinati &amp; Techno Gamerz to 350M+ reach over 4 seasons. Integrated Galaxy devices into TVF's <em>Panchayat</em> and <em>Permanent Roommates</em>.</li>
+              <li><strong>Media &amp; People Leadership:</strong> Managed ₹10L+/day media allocations; led and mentored 15+ member social, creative, performance, and analytics team.</li>
+            </ul>
+            <div class="chip-container">
+              <span class="badge badge-blue">Social &amp; Content Engine</span>
+              <span class="badge badge-gold">Effie 2× Gold</span>
+              <span class="badge badge-gold">2× Guinness WR</span>
+              <span class="badge badge-gold">Clio Sports Bronze</span>
+              <span class="badge badge-purple">350M+ Reach</span>
+            </div>
+          </div>
+
+          <!-- Micromax -->
+          <div class="role-card">
+            <div class="role-header">
+              <div>
+                <span class="role-company">Micromax Smartphones — IN Mobiles</span>
+                <div class="role-title">Digital Marketing Head — Brand &amp; Marketing</div>
+              </div>
+              <span class="role-date">Mar 2021 – Dec 2022</span>
+            </div>
+            <ul class="role-bullets">
+              <li><strong>C-Suite Direct Ownership:</strong> Owned digital strategy end-to-end, reporting directly to the CEO on commercial growth P&amp;L, budget pipeline, and customer acquisition targets across brand relaunch.</li>
+              <li><strong>Agency Governance:</strong> Directed agency partners (Havas Media &amp; PR Pundit) as brand custodian across performance advertising, PR, ORM, influencer marketing, and creative production.</li>
+              <li><strong>Marketplace Acceleration:</strong> Scaled sales funnels via Flipkart and Amazon through optimized PDP listings, high-intent retail search advertising, and conversion funnels.</li>
+            </ul>
+            <div class="chip-container">
+              <span class="badge badge-blue">P&amp;L Ownership</span>
+              <span class="badge badge-green">Brand Relaunch</span>
+              <span class="badge badge-purple">Agency Governance</span>
+            </div>
+          </div>
+
+          <!-- Showtime -->
+          <div class="role-card">
+            <div class="role-header">
+              <div>
+                <span class="role-company">Showtime Events</span>
+                <div class="role-title">Manager — Digital Marketing</div>
+              </div>
+              <span class="role-date">Jun 2019 – Feb 2021</span>
+            </div>
+            <ul class="role-bullets">
+              <li>Led integrated digital marketing campaigns (SEM, SEO, paid social, display, and content) for marquee clients including <strong>Tata Motors, Johnson &amp; Johnson, and Hero Motocorp</strong>.</li>
+              <li>Developed Marketing Mix Modeling (MMM) and multi-touch attribution dashboards to optimize cross-channel media ROI.</li>
+            </ul>
+          </div>
+
+          <!-- Vivo -->
+          <div class="role-card highlight">
+            <div class="role-header">
+              <div>
+                <span class="role-company">Vivo Smartphones India Pvt. Ltd.</span>
+                <div class="role-title">Assistant Manager — Digital Marketing</div>
+              </div>
+              <span class="role-date">Jan 2017 – Jan 2019</span>
+            </div>
+            <ul class="role-bullets">
+              <li><strong>₹100 Cr+ Annual Media Scale:</strong> Commanded ₹100 Cr+ annual media deployments across marquee sports properties including Vivo IPL (Seasons 10 &amp; 11 Title Sponsorship) and FIFA World Cup 2018.</li>
+              <li><strong>Vivo ViewTube Innovation (Shorty Award Winner):</strong> Conceived landmark contextual video campaign using Google Director Mix and 30-day YouTube search trends to dynamically render 550+ personalized DVCs starring Ranveer Singh.</li>
+              <li><strong>Record-Breaking Fan Engagement:</strong> Launched <em>#PerfectFan</em> (500K+ mentions, #1 IPL brand campaign) and founded <em>#Vivographer</em> (300% engagement lift, 10K+ creator community).</li>
+              <li><strong>Celebrity GTM:</strong> Directed commercial films starring Aamir Khan and Ranveer Singh; led digital GTM for Vivo NEX, V9, and V11 (top-selling smartphones of 2018).</li>
+            </ul>
+            <div class="chip-container">
+              <span class="badge badge-gold">Shorty Award</span>
+              <span class="badge badge-blue">₹100Cr+ IPL Media</span>
+              <span class="badge badge-green">550+ Dynamic DVCs</span>
+            </div>
+          </div>
+
+          <!-- Earlier Roles -->
+          <div class="role-card">
+            <div class="role-header">
+              <div>
+                <span class="role-company">World Phone IT Services &nbsp;<span class="role-subnote">· Digital Marketing Lead</span></span>
+              </div>
+              <span class="role-date">Jul 2015 – Dec 2016</span>
+            </div>
+            <ul class="role-bullets">
+              <li>Led B2B digital marketing, SEO, and paid performance campaigns for enterprise IT and telecom clients across pan-India markets.</li>
+            </ul>
+          </div>
+
+          <div class="role-card">
+            <div class="role-header">
+              <div>
+                <span class="role-company">UCWeb India (Alibaba Group) &nbsp;<span class="role-subnote">· Social Media Coordinator &amp; ORM</span></span>
+              </div>
+              <span class="role-date">Feb 2013 – Jun 2015</span>
+            </div>
+            <ul class="role-bullets">
+              <li>Managed brand ORM, social media community, and influencer activations for UC Browser India.</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 6. HONOURS & AWARDS -->
+      <section>
+        <h2 class="sec-heading">Honours &amp; Awards</h2>
+        <div class="awards-grid">
+          <div class="award-card">
+            <span class="award-badge-label">🥇 Effie India 2025</span>
+            <div class="award-name">2× Gold · 5× Silver · 1× Bronze</div>
+            <div class="award-sub">9 metals across 4 Samsung mandates · Galaxy A16, S24, Watch, Empowered</div>
+          </div>
+          <div class="award-card">
+            <span class="award-badge-label">🏆 Guinness x2</span>
+            <div class="award-name">India #WithGalaxy Photography Challenge</div>
+            <div class="award-sub">31,000+ submissions · Kabir Khan · Samsung</div>
+          </div>
+          <div class="award-card">
+            <span class="award-badge-label">🥉 Clio Sports</span>
+            <div class="award-name">Bronze — #IndiaCheersNeeraj</div>
+            <div class="award-sub">Paris Olympics 2024 · Direction &amp; Editing</div>
+          </div>
+          <div class="award-card">
+            <span class="award-badge-label">⭐ Google Guru</span>
+            <div class="award-name">Digital Guru Certified — All 6 Modules</div>
+            <div class="award-sub">Awarded by Sanjay Gupta, President Asia Pacific, Google</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. EDUCATION & CREDENTIALS -->
+      <section>
+        <h2 class="sec-heading">Education &amp; Credentials</h2>
+        <div class="edu-container">
+          <div class="edu-card">
+            <strong>Department of Management Studies (DMS), IIT Delhi (2017)</strong><br>
+            Executive Management Programme in Strategic Innovations, Digital Marketing &amp; Business Analytics (CEP)
+          </div>
+          <div class="edu-card">
+            <strong>Indira Gandhi National Open University (IGNOU)</strong><br>
+            <span>Attended · Bachelor of Computer Applications (BCA)</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+</body>
+</html>
