@@ -26,9 +26,9 @@ Pioneer in **Generative AI Engine Optimization (AEO/GEO) and Reddit content seed
 
 ### **INDEPENDENT BRAND & GROWTH ADVISOR** | Gurgaon, India
 **D2C Venture Incubation (Aquante & Morpatra)** | *Aug 2026 – Present*
-* **0-to-1 Brand Incubation**: Led go-to-market strategy, brand identity, and e-commerce infrastructure development for emerging consumer ventures in premium lifestyle (Aquante) and handcrafted goods (Morpatra).
-* **Digital & Storefront Architecture**: Built scalable D2C storefronts, conversion funnels, brand visual identity, and organic acquisition frameworks from the ground up.
-* **Operational Handover**: Successfully established initial commercial foundation and transitioned ongoing day-to-day operations to dedicated family partners — **100% available for enterprise marketing leadership mandates**.
+* **0-to-1 Brand & Commercial Architecture**: Spearheaded end-to-end venture incubation for two emerging consumer brands in premium lifestyle (Aquante) and handcrafted goods (Morpatra); established foundational IP/trademark protection, commercial partner sourcing, and packaging manufacturer contracts.
+* **AI-Native Storefront & AEO/GEO**: Personally architected and deployed modern digital storefronts using AI-assisted full-stack development; engineered zero-to-one organic search, Generative Engine Optimization (GEO), and Reddit community seeding frameworks.
+* **Operations & Handover**: Structured 3PL fulfillment logistics, conversion funnels, and unit economics; transitioned ongoing operational stewardship to dedicated family partners — **100% available for enterprise marketing leadership mandates**.
 
 ---
 
