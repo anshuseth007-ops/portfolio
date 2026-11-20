@@ -25,10 +25,10 @@ Pioneer in **Generative AI Engine Optimization (AEO/GEO) and Reddit content seed
 ## PROFESSIONAL EXPERIENCE
 
 ### **INDEPENDENT BRAND & GROWTH ADVISOR** | Gurgaon, India
-**D2C Venture Incubation (Aquante & Morpatra)** | *Aug 2026 – Present*
-* **0-to-1 Brand & Commercial Architecture**: Spearheaded end-to-end venture incubation for two emerging consumer brands in premium lifestyle (Aquante) and handcrafted goods (Morpatra); established foundational IP/trademark protection, commercial partner sourcing, and packaging manufacturer contracts.
-* **AI-Native Storefront & AEO/GEO**: Personally architected and deployed modern digital storefronts using AI-assisted full-stack development; engineered zero-to-one organic search, Generative Engine Optimization (GEO), and Reddit community seeding frameworks.
-* **Operations & Handover**: Structured 3PL fulfillment logistics, conversion funnels, and unit economics; transitioned ongoing operational stewardship to dedicated family partners — **100% available for enterprise marketing leadership mandates**.
+**Venture Incubation — Aquante & Morpatra** | *Aug 2026 – Present*
+* **0-to-1 Brand & Commercial Architecture**: Spearheaded launch strategy, brand positioning, and foundational infrastructure for two distinct ventures: **Aquante** (commercial & industrial water treatment solutions) and **Morpatra** (premium demi-fine jewellery); established supplier agreements, packaging sourcing, and IP/trademark protection.
+* **AI-Native Storefronts & Social Strategy**: Personally architected modern digital storefronts and B2B web infrastructure using AI-assisted full-stack development; established the social-first visual storytelling and creator strategy for Morpatra alongside high-intent B2B inbound funnels and Generative Engine Optimization (GEO) for Aquante.
+* **Operations & Handover**: Structured unit economics, vendor contracts, and fulfillment logistics; transitioned day-to-day operations to dedicated family partners — **100% available for enterprise leadership roles**.
 
 ---
 
