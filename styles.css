@@ -1,28 +1,84 @@
-/* Nuestudio Style System for Utkarsh Seth */
+/* Nuestudio Style System & Visual Polish for Utkarsh Seth Portfolio */
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 5.5rem;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
   background: #0a0a0c;
 }
 ::-webkit-scrollbar-thumb {
   background: #262936;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #ff3344;
 }
 
 /* Typography polish */
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   letter-spacing: -0.03em;
+}
+
+/* Custom Gradients & Accents */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #ffe58f 0%, #d4af37 50%, #aa7c11 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border {
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.08);
+}
+
+.gold-glow {
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.15);
+}
+
+.electric-glow {
+  box-shadow: 0 0 35px rgba(51, 102, 255, 0.12);
+}
+
+.accent-glow {
+  box-shadow: 0 0 35px rgba(255, 51, 68, 0.15);
+}
+
+/* Subtle Shimmer Animation */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.03) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 4s infinite linear;
+}
+
+/* Glassmorphism Card Style */
+.glass-panel {
+  background: rgba(22, 24, 31, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(38, 41, 54, 0.85);
+}
+
+.glass-panel:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Interactive Badge Hover */
+.badge-pill {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.badge-pill:hover {
+  transform: translateY(-2px);
 }
 
 /* Input custom styles */
