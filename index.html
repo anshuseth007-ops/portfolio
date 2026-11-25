@@ -1,966 +1,632 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UTKARSH SETH — Digital & Brand Marketing Leader · Account Director – Samsung India</title>
-  <meta name="description" content="Portfolio of Utkarsh Seth: Account Director owning Samsung India's digital mandate at Cheil (2023–2026), former Digital Marketing Head at Micromax & Assistant Manager at Vivo. Winner of 9 Effie India 2025 Metals, 2× Guinness World Records, and Clio Sports Bronze.">
-  
-  <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
-  
-  <!-- Fonts: Syne (Ultra Display) + Inter + Space Grotesk -->
+  <title>UTKARSH SETH — Digital &amp; Brand Marketing Leader · Samsung India</title>
+  <meta name="description" content="Portfolio of Utkarsh Seth: Account Director commanding Samsung India's digital mandate at Cheil (2023–2026), former Digital Marketing Head at Micromax &amp; Vivo. 9 Effie India 2025 Metals, 2x Guinness World Records, Clio Sports Bronze.">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2309090b'/><rect x='8' y='8' width='16' height='16' fill='%23ff4d29'/></svg>">
+
+  <!-- Single Drawn Family: Chivo -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS CDN -->
+  <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {
-            display: ['"Syne"', 'sans-serif'],
-            sans: ['"Inter"', 'sans-serif'],
-            mono: ['"Space Grotesk"', 'monospace'],
-          },
-          colors: {
-            nue: {
-              black: '#0a0a0c',
-              dark: '#111216',
-              card: '#16181f',
-              border: '#262936',
-              accent: '#ff3344',
-              orange: '#ff5522',
-              electric: '#3366ff',
-              gold: '#d4af37',
-              goldLight: '#ffe58f',
-            }
+            sans: ['"Chivo"', 'sans-serif'],
           }
         }
       }
     }
   </script>
-  
-  <!-- Custom Nuestudio CSS -->
+
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-nue-black text-slate-100 font-sans antialiased selection:bg-nue-accent selection:text-white">
+<body class="is-loading bg-[#09090b] text-[#f4f2ed] font-sans">
 
-  <!-- Ambient Cinematic Gradients -->
-  <div class="fixed top-0 right-0 w-[550px] h-[550px] bg-nue-accent/10 rounded-full blur-[170px] pointer-events-none -z-10"></div>
-  <div class="fixed top-1/3 left-0 w-[600px] h-[600px] bg-nue-gold/8 rounded-full blur-[190px] pointer-events-none -z-10"></div>
-  <div class="fixed bottom-0 right-1/4 w-[650px] h-[650px] bg-nue-electric/10 rounded-full blur-[200px] pointer-events-none -z-10"></div>
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress" aria-hidden="true"></div>
 
-  <!-- Editorial Top Navigation (Nuestudio Style) -->
-  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md bg-nue-black/85 border-b border-nue-border/60" id="navbar">
-    <div class="max-w-[1400px] mx-auto px-6 sm:px-10 h-20 flex items-center justify-between">
-      
-      <!-- Brand Monogram -->
-      <a href="#" class="flex items-center gap-3 group">
-        <span class="font-display font-black text-2xl tracking-tighter text-white group-hover:text-nue-accent transition-colors">
-          UTKARSH SETH<span class="text-nue-accent">.</span>
-        </span>
+  <!-- Three.js Ambient Particle Canvas -->
+  <canvas id="webgl-bg" aria-hidden="true"></canvas>
+
+  <!-- Custom Magnetic Cursor -->
+  <div id="cursor-follower" class="cursor-follower" aria-hidden="true">
+    <span id="cursor-label" class="cursor-follower-label"></span>
+  </div>
+
+  <!-- Preloader Curtain -->
+  <div id="preloader" aria-hidden="true">
+    <div class="flex items-center justify-between text-sm text-[#9e9da6]">
+      <span>Utkarsh Seth · 2013–2026</span>
+      <span>Delhi-NCR · APAC</span>
+    </div>
+    <div class="flex items-end justify-between">
+      <p class="text-2xl sm:text-4xl font-bold text-[#f4f2ed]">Shaping culture. Scaling P&amp;L.</p>
+      <div class="text-6xl sm:text-8xl font-black tracking-tighter text-[#ff4d29]" id="preloader-count">0%</div>
+    </div>
+  </div>
+
+  <!-- Editorial Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#09090b]/95">
+    <div class="max-w-[1440px] mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+      <a href="#hero" class="text-base font-black tracking-tight flex items-center gap-2">
+        <span>Utkarsh Seth</span>
+        <span class="w-2 h-2 bg-[#ff4d29] inline-block"></span>
       </a>
 
-      <!-- Desktop Links -->
-      <nav class="hidden lg:flex items-center gap-7 text-[11px] font-mono tracking-widest uppercase text-slate-400">
-        <a href="#effie-sweep" class="hover:text-amber-300 transition-colors flex items-center gap-1.5">
-          <span>🏆 Effie 2025 Wins</span>
-          <span class="px-1.5 py-0.5 rounded bg-amber-400/20 text-[9px] text-amber-300 font-bold border border-amber-400/30">9 Metals</span>
-        </a>
-        <a href="#flagship-works" class="hover:text-white transition-colors">Featured Works</a>
-        <a href="#campaign-index" class="hover:text-white transition-colors flex items-center gap-2">
-          <span>Campaign Archive</span>
-          <span class="px-1.5 py-0.5 rounded bg-nue-border text-[9px] text-white" id="total-campaigns-count">32+</span>
-        </a>
-        <a href="#aeo-engine" class="hover:text-white transition-colors">AEO / GEO Engine</a>
-        <a href="#ventures" class="hover:text-white transition-colors">Ventures</a>
-        <a href="#about" class="hover:text-white transition-colors">Leadership</a>
-        <a href="https://instagram.com/7enstrings" target="_blank" class="hover:text-nue-accent transition-colors text-slate-300">@7enstrings ↗</a>
+      <nav class="hidden md:flex items-center gap-7 text-sm text-[#d6d4ce]">
+        <a href="#effie-sweep" class="hover:text-[#f4f2ed] transition-colors">Effie 2025</a>
+        <a href="#flagship-works" class="hover:text-[#f4f2ed] transition-colors">Masterworks</a>
+        <a href="#aeo-engine" class="hover:text-[#f4f2ed] transition-colors">AEO/GEO Lab</a>
+        <a href="#campaign-index" class="hover:text-[#f4f2ed] transition-colors">Archive</a>
+        <a href="#ventures" class="hover:text-[#f4f2ed] transition-colors">Ventures</a>
       </nav>
 
       <div class="flex items-center gap-3">
-        <!-- Resume Dropdown / Quick Links -->
-        <a href="/resume/index.html" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-nue-border hover:border-slate-300 text-xs font-mono uppercase tracking-wider text-slate-200 hover:text-white transition-all bg-white/5">
-          <span>Executive CV</span>
-          <span class="text-[10px]">↗</span>
+        <a href="/resume/index.html" target="_blank" class="hidden sm:inline-flex items-center px-3.5 py-2 bg-[#1a1a22] hover:bg-[#262630] text-sm font-bold transition-colors">
+          Web CV ↗
         </a>
-        <a href="#contact" class="px-5 py-2.5 rounded-full bg-white hover:bg-slate-200 text-black font-display font-bold text-xs uppercase tracking-wider transition-all hover:scale-105 shadow-lg shadow-white/10">
-          Initiate Contact
+        <a href="#contact" class="px-4 py-2 bg-[#ff4d29] hover:bg-[#f4f2ed] text-[#09090b] font-bold text-sm transition-colors">
+          Contact
         </a>
       </div>
-
     </div>
   </header>
 
-  <!-- Giant Editorial Hero Section -->
-  <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 border-b border-nue-border/60">
-    <div class="max-w-[1400px] mx-auto px-6 sm:px-10">
-      
-      <!-- Sub-headline ticker strip -->
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-nue-border pb-6 mb-12 text-xs font-mono uppercase tracking-widest text-slate-400 gap-4">
-        <div class="flex items-center gap-3">
-          <span class="px-2.5 py-1 rounded bg-nue-border text-white text-[11px] font-bold">13+ YEARS LEADERSHIP</span>
-          <span class="text-slate-500">·</span>
-          <span>SAMSUNG INDIA · VIVO · MICROMAX · CHEIL INDIA</span>
-        </div>
-        <div class="flex items-center gap-2 text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 w-fit">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span class="text-[11px] font-bold text-emerald-300">OPEN TO VP & HEAD OF MARKETING ROLES · DELHI-NCR</span>
-        </div>
-      </div>
+  <main class="relative z-10">
 
-      <!-- Main Typographic & Visual Grid -->
-      <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+    <!-- 1. HERO: THE NAME AS A MONUMENT -->
+    <section id="hero" class="min-h-[96svh] pt-24 pb-10 px-5 sm:px-8 flex flex-col justify-between overflow-hidden">
+      <div class="max-w-[1440px] w-full mx-auto grid lg:grid-cols-12 gap-10 items-start pt-4">
         
-        <!-- Left: Oversized Typographic Statement -->
-        <div class="lg:col-span-7 space-y-8">
-          
-          <div class="space-y-3">
-            <span class="text-xs font-mono text-nue-accent uppercase tracking-widest block font-bold">
-              Account Director · Samsung Digital Mandate | AI-First Pioneer
-            </span>
-            <h1 class="text-5xl sm:text-7xl lg:text-8xl font-display font-black text-white tracking-tight uppercase leading-[0.92]">
-              SHAPING <br>
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400">CULTURE.</span> <br>
-              <span class="text-nue-accent">SCALING</span> P&L.
-            </h1>
+        <!-- Left Statement & Actions -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-emerald-500/15 text-emerald-300 text-sm font-bold">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span>Open to VP &amp; Head of Marketing · Delhi-NCR / Singapore</span>
           </div>
 
-          <p class="text-base sm:text-xl text-slate-300 font-light leading-relaxed max-w-2xl">
-            Operating from <strong class="text-white font-semibold">both sides of the table</strong> — in-house brand custodian at <strong class="text-white font-semibold">Vivo and Micromax</strong>, and agency Account Director commanding <strong class="text-white font-semibold">Samsung India's full digital mandate</strong> at Cheil (2023–2026). Orchestrating <strong class="text-white font-semibold">₹100 Cr+ annual media</strong>, pioneering India's first enterprise <strong class="text-white font-semibold">AEO/GEO & Reddit Seeding</strong> framework, and winning <strong class="text-amber-300 font-semibold">9 Effie India 2025 Metals</strong> & <strong class="text-white font-semibold">Two Guinness World Records</strong>.
+          <p class="text-lg sm:text-2xl font-normal leading-snug max-w-2xl text-[#f4f2ed]">
+            Account Director commanding <strong class="text-[#ff4d29]">Samsung India’s digital mandate</strong> at Cheil. 13+ years operating from both sides of the table across Vivo, Micromax, and ₹100 Cr+ annual media.
           </p>
 
-          <!-- Action Buttons -->
-          <div class="flex flex-wrap items-center gap-4 pt-2">
-            <a href="#effie-sweep" class="px-7 py-4 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 hover:from-amber-300 hover:to-amber-500 text-black font-display font-black text-sm tracking-wide uppercase transition-transform hover:scale-105 shadow-xl shadow-amber-500/20 flex items-center gap-2">
-              <span>View 9 Effie 2025 Wins</span>
-              <span>🏆</span>
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a href="#flagship-works" data-cursor="Explore" class="magnetic-btn px-6 py-3.5 bg-[#f4f2ed] text-[#09090b] hover:bg-[#ff4d29] font-bold text-sm transition-colors">
+              Explore Masterworks ↓
             </a>
-            <a href="#flagship-works" class="px-7 py-4 rounded-full bg-nue-dark border border-nue-border hover:border-white text-white font-display font-bold text-sm tracking-wide uppercase transition-all">
-              Flagship Films & IPs ↓
+            <a href="/resume/Utkarsh_Seth_Executive_Resume.pdf" download="Utkarsh_Seth_Executive_Resume.pdf" class="magnetic-btn px-5 py-3.5 bg-[#1a1a22] hover:bg-[#262630] text-sm font-bold transition-colors">
+              Visual CV (PDF) ↓
             </a>
-            <div class="flex items-center gap-2">
-              <a href="/resume/Utkarsh_Seth_Executive_Resume.pdf" download="Utkarsh_Seth_Executive_Resume.pdf" class="px-5 py-4 rounded-full border border-nue-border hover:border-nue-accent text-slate-300 hover:text-white font-mono text-xs uppercase tracking-wider transition-all flex items-center gap-1.5 bg-white/5">
-                <span>Visual CV (PDF)</span>
-                <span>↓</span>
-              </a>
-              <a href="/resume/Utkarsh_Seth_ATS_Certified_Resume.pdf" download="Utkarsh_Seth_ATS_Certified_Resume.pdf" class="px-5 py-4 rounded-full border border-nue-border hover:border-slate-300 text-slate-400 hover:text-white font-mono text-xs uppercase tracking-wider transition-all flex items-center gap-1.5">
-                <span>ATS (PDF)</span>
-                <span>↓</span>
-              </a>
+            <a href="/resume/Utkarsh_Seth_ATS_Certified_Resume.pdf" download="Utkarsh_Seth_ATS_Certified_Resume.pdf" class="px-5 py-3.5 bg-[#121217] hover:bg-[#1a1a22] text-[#d6d4ce] hover:text-[#f4f2ed] text-sm font-bold transition-colors">
+              ATS CV (PDF) ↓
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Editorial Portrait & Metrics -->
+        <div class="lg:col-span-5 flex flex-col sm:flex-row lg:flex-row items-start sm:items-end justify-end gap-6">
+          <div class="grid grid-cols-2 gap-x-8 gap-y-5 text-left sm:text-right order-2 sm:order-1">
+            <div>
+              <div class="text-2xl sm:text-3xl font-black text-[#f4f2ed]">9 Metals</div>
+              <div class="text-sm text-[#d4af37]">Effie India 2025</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-black text-[#f4f2ed]">₹100Cr+</div>
+              <div class="text-sm text-[#9e9da6]">Annual Media</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-black text-[#ff4d29]">350M+</div>
+              <div class="text-sm text-[#9e9da6]">#PlayGalaxy Reach</div>
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-black text-[#f4f2ed]">2x GWR</div>
+              <div class="text-sm text-[#9e9da6]">Guinness + Clio</div>
             </div>
           </div>
 
-        </div>
-
-        <!-- Right: Editorial Portrait Frame -->
-        <div class="lg:col-span-5 relative">
-          <div class="relative mx-auto max-w-md aspect-[3.8/4.6] rounded-3xl overflow-hidden border border-nue-border bg-nue-dark shadow-2xl group">
-            <img src="assets/utkarsh_portrait.jpg" alt="Utkarsh Seth" class="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105">
-            <div class="absolute inset-0 bg-gradient-to-t from-nue-black via-nue-black/20 to-transparent opacity-90"></div>
-            
-            <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between">
-              <div>
-                <span class="text-[10px] font-mono uppercase tracking-widest text-amber-300 block font-bold">Executive Leadership</span>
-                <h3 class="text-2xl font-display font-extrabold text-white">Utkarsh Seth</h3>
-                <p class="text-xs font-mono text-slate-300 mt-0.5">Account Director · Samsung Digital Mandate</p>
-                <div class="flex items-center gap-2 mt-2">
-                  <span class="px-2 py-0.5 rounded bg-amber-400/20 text-amber-300 text-[10px] font-mono border border-amber-400/30 font-bold">Effie 2× Gold</span>
-                  <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 text-[10px] font-mono border border-blue-500/30">2× Guinness WR</span>
-                </div>
-              </div>
-              <span class="font-mono text-xs text-slate-400 font-bold">2013—2026</span>
-            </div>
+          <div class="w-44 sm:w-52 aspect-[4/5] overflow-hidden bg-[#121217] shrink-0 order-1 sm:order-2 group">
+            <img src="assets/utkarsh_portrait.jpg" alt="Utkarsh Seth" class="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-transform duration-700">
           </div>
-        </div>
-
-      </div>
-
-      <!-- High-Impact Stamped Metrics Strip -->
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-6 mt-16 pt-10 border-t border-nue-border">
-        <div>
-          <span class="text-[10px] font-mono uppercase tracking-widest text-slate-400 block mb-1">Executive Tenure</span>
-          <div class="text-4xl sm:text-5xl font-display font-black text-white">13+ Yrs</div>
-          <span class="text-xs font-mono text-slate-400 mt-1 block">In-House & Agency Mandates</span>
-        </div>
-        <div>
-          <span class="text-[10px] font-mono uppercase tracking-widest text-slate-400 block mb-1">Annual Media Scale</span>
-          <div class="text-4xl sm:text-5xl font-display font-black text-white">₹100 Cr+</div>
-          <span class="text-xs font-mono text-slate-400 mt-1 block">Vivo IPL, FIFA & Samsung Flagships</span>
-        </div>
-        <div class="border-l border-nue-border/80 pl-4">
-          <span class="text-[10px] font-mono uppercase tracking-widest text-amber-400 block mb-1 font-bold">Effie India 2025</span>
-          <div class="text-4xl sm:text-5xl font-display font-black text-amber-300">9 Metals</div>
-          <span class="text-xs font-mono text-amber-400/80 mt-1 block">2× Gold · 5× Silver · 1× Bronze</span>
-        </div>
-        <div>
-          <span class="text-[10px] font-mono uppercase tracking-widest text-slate-400 block mb-1">Esports IP Scale</span>
-          <div class="text-4xl sm:text-5xl font-display font-black text-nue-accent">350M+</div>
-          <span class="text-xs font-mono text-slate-400 mt-1 block">#PlayGalaxy x CarryMinati (4 Seasons)</span>
-        </div>
-        <div>
-          <span class="text-[10px] font-mono uppercase tracking-widest text-slate-400 block mb-1">World Records & Global</span>
-          <div class="text-4xl sm:text-5xl font-display font-black text-white">2× Record</div>
-          <span class="text-xs font-mono text-slate-400 mt-1 block">Guinness Records + Clio Sports Bronze</span>
         </div>
       </div>
 
-    </div>
-  </section>
+      <!-- Monumental Viewport-Spanning Wordmark -->
+      <div class="max-w-[1440px] w-full mx-auto pt-8 select-none">
+        <h1 class="monument-wordmark text-[#f4f2ed] text-center lg:text-left">
+          UTKARSH <span class="text-[#ff4d29]">SETH</span>
+        </h1>
+      </div>
+    </section>
 
-  <!-- NEW SECTION: Effie India 2025 & Global Honours Trophy Showcase -->
-  <section id="effie-sweep" class="py-24 border-b border-nue-border/60 relative overflow-hidden bg-gradient-to-b from-nue-black via-nue-dark/80 to-nue-black">
-    <div class="max-w-[1400px] mx-auto px-6 sm:px-10">
-      
-      <!-- Section Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-        <div>
-          <div class="flex items-center gap-2 mb-3">
-            <span class="px-3 py-1 rounded-full bg-amber-400/15 text-amber-300 border border-amber-400/30 text-xs font-mono font-bold tracking-wider uppercase">
-              Award-Winning Impact · Effie India 2025
-            </span>
-            <span class="text-xs font-mono text-slate-400">Cheil India for Samsung India</span>
-          </div>
-          <h2 class="text-4xl sm:text-6xl font-display font-black text-white uppercase tracking-tight">
-            The 9-Metal <span class="gold-gradient-text">Effie Sweep</span>
+    <!-- 2. KINETIC MARQUEE + EFFIE INDIA 2025 SWEEP -->
+    <section id="effie-sweep" class="bg-[#121217]">
+      <div class="marquee-wrapper overflow-hidden py-4 bg-[#1a1a22]">
+        <div class="marquee-track flex items-center gap-10 text-sm font-bold text-[#f4f2ed]">
+          <span>Effie India 2025: 2x Gold, 5x Silver, 1x Bronze</span>
+          <span class="text-[#ff4d29]">/</span>
+          <span>2x Guinness World Records (#WithGalaxy)</span>
+          <span class="text-[#ff4d29]">/</span>
+          <span>Clio Sports Bronze (#IndiaCheersNeeraj)</span>
+          <span class="text-[#ff4d29]">/</span>
+          <span>Shorty Award Winner (Vivo ViewTube)</span>
+          <span class="text-[#ff4d29]">/</span>
+          <span>6x Google Ads Digital Guru</span>
+          <span class="text-[#ff4d29]">/</span>
+          <span>Effie India 2025: 2x Gold, 5x Silver, 1x Bronze</span>
+          <span class="text-[#ff4d29]">/</span>
+          <span>2x Guinness World Records (#WithGalaxy)</span>
+          <span class="text-[#ff4d29]">/</span>
+          <span>Clio Sports Bronze (#IndiaCheersNeeraj)</span>
+          <span class="text-[#ff4d29]">/</span>
+          <span>Shorty Award Winner (Vivo ViewTube)</span>
+          <span class="text-[#ff4d29]">/</span>
+          <span>6x Google Ads Digital Guru</span>
+          <span class="text-[#ff4d29]">/</span>
+        </div>
+      </div>
+
+      <div class="max-w-[1440px] mx-auto px-5 sm:px-8 py-20 sm:py-28">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-14 gap-6">
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight shrink-0">
+            Effie 2025 <span class="text-[#d4af37]">Sweep</span>
           </h2>
-          <p class="text-slate-300 text-sm sm:text-base font-light mt-3 max-w-3xl leading-relaxed">
-            Recognized at the 2025 Effie India Awards for marketing effectiveness that blended radical cultural insight, grassroots influencer subversion, and high-impact comparative positioning across the Samsung portfolio.
+          <p class="text-base text-[#d6d4ce] max-w-lg leading-relaxed">
+            Nine metals won at Effie India 2025 across four Samsung mandates at Cheil India—proving that sharp cultural insight outperforms brute-force media spend.
           </p>
         </div>
 
-        <div class="flex items-center gap-3 shrink-0">
-          <div class="p-4 rounded-2xl bg-amber-400/10 border border-amber-400/30 text-center">
-            <div class="text-3xl font-display font-black text-amber-300">2×</div>
-            <div class="text-[10px] font-mono text-amber-400 uppercase font-bold tracking-wider">Gold Effies</div>
-          </div>
-          <div class="p-4 rounded-2xl bg-slate-300/10 border border-slate-300/30 text-center">
-            <div class="text-3xl font-display font-black text-slate-200">5×</div>
-            <div class="text-[10px] font-mono text-slate-300 uppercase font-bold tracking-wider">Silver Effies</div>
-          </div>
-          <div class="p-4 rounded-2xl bg-amber-700/15 border border-amber-700/30 text-center">
-            <div class="text-3xl font-display font-black text-amber-500">1×</div>
-            <div class="text-[10px] font-mono text-amber-400 uppercase font-bold tracking-wider">Bronze Effie</div>
-          </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <article class="effie-card p-7 bg-[#09090b] flex flex-col justify-between space-y-6">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-sm">
+                <span class="px-2.5 py-1 bg-[#d4af37] text-[#09090b] font-bold">Gold Effie</span>
+                <span class="text-[#9e9da6]">Influencer</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-black leading-tight">Galaxy A16 Village Creators</h3>
+              <p class="text-base text-[#d6d4ce] leading-relaxed">Mobilized rural village creators instead of Tier-1 celebrities to drive authentic grassroots trust and retail pull.</p>
+            </div>
+            <div class="text-sm text-[#d4af37] font-bold">Small Village Out-influenced Influencers</div>
+          </article>
+
+          <article class="effie-card p-7 bg-[#09090b] flex flex-col justify-between space-y-6">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-sm">
+                <span class="px-2.5 py-1 bg-[#d4af37] text-[#09090b] font-bold">Gold Effie</span>
+                <span class="text-[#9e9da6]">Education</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-black leading-tight">Galaxy Empowered</h3>
+              <p class="text-base text-[#d6d4ce] leading-relaxed">Addressed digital learning divides across underserved regions, turning Galaxy ecosystem devices into an educational equalizer.</p>
+            </div>
+            <div class="text-sm text-[#d4af37] font-bold">Authority Crisis Initiative</div>
+          </article>
+
+          <article class="effie-card p-7 bg-[#09090b] flex flex-col justify-between space-y-6">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-sm">
+                <span class="px-2.5 py-1 bg-[#f4f2ed] text-[#09090b] font-bold">2x Silver Effie</span>
+                <span class="text-[#9e9da6]">Flagship AI</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-black leading-tight">Galaxy S24 Trojan Horse</h3>
+              <p class="text-base text-[#d6d4ce] leading-relaxed">Search hijacking and head-to-head Galaxy AI demonstrations converting high-intent iOS switchers.</p>
+            </div>
+            <div class="text-sm text-[#f4f2ed] font-bold">Trojan Horse vs. Apple</div>
+          </article>
+
+          <article class="effie-card p-7 bg-[#09090b] flex flex-col justify-between space-y-6">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-sm">
+                <span class="px-2.5 py-1 bg-[#ff4d29] text-[#09090b] font-bold">Silver + Bronze</span>
+                <span class="text-[#9e9da6]">Wearables</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-black leading-tight">Galaxy Watch Primetime</h3>
+              <p class="text-base text-[#d6d4ce] leading-relaxed">Live biometric stress tracking during national broadcasts paired with the 'Go Without Your Phone' eSIM narrative.</p>
+            </div>
+            <div class="text-sm text-[#ff4d29] font-bold">Stress Tests &amp; LTE Autonomy</div>
+          </article>
         </div>
       </div>
+    </section>
 
-      <!-- 4 High-Visual Effie Campaign Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        
-        <!-- Effie Card 1: Galaxy A16 (Gold) -->
-        <div class="group p-7 rounded-3xl bg-nue-dark border border-amber-400/30 hover:border-amber-400 transition-all duration-300 relative overflow-hidden flex flex-col justify-between space-y-6 gold-glow">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 font-mono text-xs font-bold border border-amber-400/40">
-                🥇 GOLD EFFIE
-              </span>
-              <span class="text-xs font-mono text-slate-400">Category: Influencer</span>
-            </div>
-            <div>
-              <h3 class="text-2xl font-display font-black text-white group-hover:text-amber-300 transition-colors uppercase leading-tight">
-                Small Village Out-Influenced Influencers
-              </h3>
-              <p class="text-xs font-mono text-amber-400/90 mt-1">Galaxy A16 5G Launch</p>
-            </div>
-            <p class="text-xs text-slate-300 font-light leading-relaxed">
-              Subverted conventional Tier-1 influencer playbooks by discovering, mentoring, and amplifying authentic rural village creators across India — driving unmatched regional credibility, viral shareability, and retail footfall.
-            </p>
-          </div>
-          <div class="pt-4 border-t border-nue-border flex items-center justify-between text-[11px] font-mono text-slate-400">
-            <span>Cheil India · Samsung</span>
-            <span class="text-amber-300 font-bold">Effie India 2025</span>
-          </div>
-        </div>
-
-        <!-- Effie Card 2: Galaxy Empowered (Gold) -->
-        <div class="group p-7 rounded-3xl bg-nue-dark border border-amber-400/30 hover:border-amber-400 transition-all duration-300 relative overflow-hidden flex flex-col justify-between space-y-6 gold-glow">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 font-mono text-xs font-bold border border-amber-400/40">
-                🥇 GOLD EFFIE
-              </span>
-              <span class="text-xs font-mono text-slate-400">Category: Education</span>
-            </div>
-            <div>
-              <h3 class="text-2xl font-display font-black text-white group-hover:text-amber-300 transition-colors uppercase leading-tight">
-                Galaxy Empowered: Authority Crisis
-              </h3>
-              <p class="text-xs font-mono text-amber-400/90 mt-1">CSR & Youth Education</p>
-            </div>
-            <p class="text-xs text-slate-300 font-light leading-relaxed">
-              A hard-hitting national education movement addressing digital authority, student learning divides, and empowering youth with technical skills, resulting in widespread government and academic adoption.
-            </p>
-          </div>
-          <div class="pt-4 border-t border-nue-border flex items-center justify-between text-[11px] font-mono text-slate-400">
-            <span>Cheil India · Samsung</span>
-            <span class="text-amber-300 font-bold">Effie India 2025</span>
-          </div>
-        </div>
-
-        <!-- Effie Card 3: Galaxy S24 (2x Silver) -->
-        <div class="group p-7 rounded-3xl bg-nue-dark border border-slate-400/30 hover:border-slate-300 transition-all duration-300 relative overflow-hidden flex flex-col justify-between space-y-6">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="px-3 py-1 rounded-full bg-slate-300/20 text-slate-200 font-mono text-xs font-bold border border-slate-300/40">
-                🥈 2× SILVER EFFIE
-              </span>
-              <span class="text-xs font-mono text-slate-400">Consumer Tech</span>
-            </div>
-            <div>
-              <h3 class="text-2xl font-display font-black text-white group-hover:text-slate-200 transition-colors uppercase leading-tight">
-                Trojan Horse vs. Apple
-              </h3>
-              <p class="text-xs font-mono text-slate-300 mt-1">Galaxy S24 Flagship AI Launch</p>
-            </div>
-            <p class="text-xs text-slate-300 font-light leading-relaxed">
-              Aggressive comparative positioning and high-intent search interception that targeted iOS users considering an upgrade, highlighting Galaxy AI features (Circle to Search, Live Translate) to trigger high switcher volumes.
-            </p>
-          </div>
-          <div class="pt-4 border-t border-nue-border flex items-center justify-between text-[11px] font-mono text-slate-400">
-            <span>Cheil India · Samsung</span>
-            <span class="text-slate-200 font-bold">Effie India 2025</span>
-          </div>
-        </div>
-
-        <!-- Effie Card 4: Galaxy Watch Series (Silver + Bronze) -->
-        <div class="group p-7 rounded-3xl bg-nue-dark border border-amber-600/30 hover:border-amber-500 transition-all duration-300 relative overflow-hidden flex flex-col justify-between space-y-6">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="px-3 py-1 rounded-full bg-amber-600/20 text-amber-300 font-mono text-xs font-bold border border-amber-600/40">
-                🥈 SILVER + 🥉 BRONZE
-              </span>
-              <span class="text-xs font-mono text-slate-400">Wearables</span>
-            </div>
-            <div>
-              <h3 class="text-2xl font-display font-black text-white group-hover:text-amber-400 transition-colors uppercase leading-tight">
-                Stress Tests On Primetime
-              </h3>
-              <p class="text-xs font-mono text-amber-400/90 mt-1">Galaxy Watch LTE Autonomy</p>
-            </div>
-            <p class="text-xs text-slate-300 font-light leading-relaxed">
-              Live biometric stress measurement during nail-biting sports telecasts combined with the "Go Without Your Phone" eSIM autonomy narrative, cementing Galaxy Watch as India's premier wellness companion.
-            </p>
-          </div>
-          <div class="pt-4 border-t border-nue-border flex items-center justify-between text-[11px] font-mono text-slate-400">
-            <span>Cheil India · Samsung</span>
-            <span class="text-amber-400 font-bold">Effie India 2025</span>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Additional Global Honours Strip -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-        
-        <div class="p-6 rounded-2xl bg-nue-card border border-nue-border flex items-center gap-4">
-          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-2xl shrink-0">
-            🏆
-          </div>
-          <div>
-            <div class="text-xs font-mono text-purple-400 uppercase font-bold">Guinness Records</div>
-            <div class="text-base font-display font-bold text-white">2× World Records</div>
-            <div class="text-[11px] text-slate-400">India #WithGalaxy · Kabir Khan</div>
-          </div>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-nue-card border border-nue-border flex items-center gap-4">
-          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-2xl shrink-0">
-            🥉
-          </div>
-          <div>
-            <div class="text-xs font-mono text-emerald-400 uppercase font-bold">Clio Sports Award</div>
-            <div class="text-base font-display font-bold text-white">Bronze Trophy</div>
-            <div class="text-[11px] text-slate-400">#IndiaCheersNeeraj (Paris Olympics)</div>
-          </div>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-nue-card border border-nue-border flex items-center gap-4">
-          <div class="w-12 h-12 rounded-xl bg-nue-accent/10 border border-nue-accent/30 flex items-center justify-center text-2xl shrink-0">
-            🏅
-          </div>
-          <div>
-            <div class="text-xs font-mono text-nue-accent uppercase font-bold">Shorty Award Winner</div>
-            <div class="text-base font-display font-bold text-white">Best Social Video</div>
-            <div class="text-[11px] text-slate-400">Vivo ViewTube (550+ Dynamic DVCs)</div>
-          </div>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-nue-card border border-nue-border flex items-center gap-4">
-          <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-2xl shrink-0">
-            ⭐
-          </div>
-          <div>
-            <div class="text-xs font-mono text-blue-400 uppercase font-bold">Google APAC Certified</div>
-            <div class="text-base font-display font-bold text-white">Digital Guru (All 6)</div>
-            <div class="text-[11px] text-slate-400">Presented by Sanjay Gupta (President)</div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Flagship Productions Showcase (Visual & Video Heavy) -->
-  <section id="flagship-works" class="py-24 border-b border-nue-border/60 bg-nue-dark/40">
-    <div class="max-w-[1400px] mx-auto px-6 sm:px-10">
-      
-      <div class="mb-16">
-        <span class="text-xs font-mono uppercase tracking-widest text-nue-accent block mb-2 font-bold">Selected Masterworks</span>
-        <h2 class="text-4xl sm:text-6xl font-display font-black text-white uppercase tracking-tight">
-          Iconic Productions & Cultural IPs
+    <!-- 3. PINNED HORIZONTAL CINEMA TRACK: FLAGSHIP MASTERWORKS -->
+    <section id="flagship-works" class="overflow-hidden bg-[#09090b] py-20 sm:py-24">
+      <div class="max-w-[1440px] mx-auto px-5 sm:px-8 mb-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <h2 class="text-3xl sm:text-5xl font-black tracking-tight">
+          Flagship Masterworks
         </h2>
-        <p class="text-slate-400 text-sm font-mono mt-2">
-          Campaign films, programmatic video frameworks, and nationwide cultural movements that captured India's imagination.
+        <p class="text-base text-[#d6d4ce]">
+          Click any campaign frame to open the full strategic breakdown →
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div class="cinema-stage overflow-hidden">
+      <div class="cinema-track flex flex-col md:flex-row gap-8 px-5 sm:px-8">
         
-        <!-- Case 1: #IndiaCheersNeeraj -->
-        <div class="group relative rounded-3xl overflow-hidden border border-nue-border bg-nue-dark p-8 space-y-6 hover:border-emerald-400/60 transition-all">
-          <div class="flex items-center justify-between text-xs font-mono text-slate-400">
-            <span class="px-3 py-1 rounded-full bg-nue-border text-white uppercase font-bold">Paris Olympics 2024 · Samsung</span>
-            <span class="text-emerald-400 font-semibold flex items-center gap-1">🥉 Clio Sports Bronze Winner</span>
+        <button type="button" data-case-id="neeraj" data-cursor="Open Case" class="cinema-card text-left group bg-[#121217] hover:bg-[#1a1a22] overflow-hidden">
+          <div class="aspect-[16/9] overflow-hidden relative bg-[#09090b]">
+            <img src="assets/campaigns/neeraj_olympics.jpg" alt="#IndiaCheersNeeraj Paris Olympics 2024" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute top-4 left-4 px-3 py-1 bg-[#09090b] text-sm font-bold">Clio Sports Bronze</div>
           </div>
-          <div>
-            <h3 class="text-3xl font-display font-black text-white uppercase group-hover:text-emerald-300 transition-colors">
+          <div class="p-6 sm:p-7 space-y-2">
+            <div class="flex items-center justify-between text-sm text-[#9e9da6]">
+              <span>Paris Olympics 2024 · Samsung</span>
+              <span class="text-[#ff4d29] font-bold">343K+ Conversations</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-black tracking-tight group-hover:text-[#ff4d29] transition-colors">
               #IndiaCheersNeeraj x Galaxy AI
             </h3>
-            <p class="text-sm font-mono text-slate-400 mt-1">Galaxy Z Fold6 & Z Flip6 · 343K+ Conversations</p>
+            <p class="text-base text-[#d6d4ce] line-clamp-2">120s film rallying India behind Neeraj Chopra, awarded Bronze at Clio Sports for Direction &amp; Editing.</p>
           </div>
-          <div class="aspect-[16/9] rounded-2xl overflow-hidden bg-nue-black relative flex items-center justify-center border border-nue-border group">
-            <div class="absolute inset-0 bg-gradient-to-t from-nue-black via-nue-black/40 to-transparent opacity-80"></div>
-            <div class="text-center p-6 space-y-2 z-10">
-              <span class="text-5xl font-display font-black text-white tracking-tight">343K+</span>
-              <p class="text-xs font-mono text-emerald-300 font-medium">Nationwide Conversations Across Digital & Cinema</p>
-            </div>
-            <div class="absolute top-4 right-4 z-20 w-11 h-11 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white border border-white/20 group-hover:bg-emerald-500 group-hover:text-black transition-all">
-              ▶
-            </div>
-          </div>
-          <p class="text-sm text-slate-300 leading-relaxed font-light">
-            Co-produced the 120-second cinematic film rallying 1.4 billion Indians behind Olympic champion Neeraj Chopra, showcasing his intense training sessions alongside Galaxy AI capabilities. Won the Bronze Clio Sports Award for direction and video editing.
-          </p>
-        </div>
+        </button>
 
-        <!-- Case 2: Vivo ViewTube -->
-        <div class="group relative rounded-3xl overflow-hidden border border-nue-border bg-nue-dark p-8 space-y-6 hover:border-nue-accent transition-all">
-          <div class="flex items-center justify-between text-xs font-mono text-slate-400">
-            <span class="px-3 py-1 rounded-full bg-nue-border text-white uppercase font-bold">Vivo Smartphones India</span>
-            <span class="text-nue-accent font-semibold flex items-center gap-1">🏅 Shorty Award Winner</span>
+        <button type="button" data-case-id="viewtube" data-cursor="Open Case" class="cinema-card text-left group bg-[#121217] hover:bg-[#1a1a22] overflow-hidden">
+          <div class="aspect-[16/9] overflow-hidden relative bg-[#09090b]">
+            <img src="assets/campaigns/vivo_viewtube.jpg" alt="Vivo ViewTube Dynamic Video Matrix" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute top-4 left-4 px-3 py-1 bg-[#09090b] text-sm font-bold">Shorty Award Winner</div>
           </div>
-          <div>
-            <h3 class="text-3xl font-display font-black text-white uppercase group-hover:text-nue-accent transition-colors">
+          <div class="p-6 sm:p-7 space-y-2">
+            <div class="flex items-center justify-between text-sm text-[#9e9da6]">
+              <span>Vivo India · Google Director Mix</span>
+              <span class="text-[#ff4d29] font-bold">550+ Dynamic DVCs</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-black tracking-tight group-hover:text-[#ff4d29] transition-colors">
               Vivo ViewTube x Ranveer Singh
             </h3>
-            <p class="text-sm font-mono text-slate-400 mt-1">550+ Contextually Rendered Ads · Google Director Mix</p>
+            <p class="text-base text-[#d6d4ce] line-clamp-2">Real-time YouTube search-triggered programmatic video engine rendering 550+ personalized creatives.</p>
           </div>
-          <div class="aspect-[16/9] rounded-2xl overflow-hidden bg-nue-black relative flex items-center justify-center border border-nue-border">
-            <div class="absolute inset-0 bg-gradient-to-t from-nue-black via-nue-black/40 to-transparent opacity-80"></div>
-            <div class="text-center p-6 space-y-2 z-10">
-              <span class="text-5xl font-display font-black text-nue-accent tracking-tight">550+ DVCs</span>
-              <p class="text-xs font-mono text-slate-300">Customized to Real-Time YouTube Search Queries</p>
-            </div>
-            <div class="absolute top-4 right-4 z-20 w-11 h-11 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white border border-white/20 group-hover:bg-nue-accent transition-all">
-              ▶
-            </div>
-          </div>
-          <p class="text-sm text-slate-300 leading-relaxed font-light">
-            Engineered one of India's most celebrated programmatic video campaigns. When viewers searched for movie trailers, Ranveer appeared with popcorn; when searching for music, he reacted to beats—driving unprecedented brand recall without viewer ad fatigue.
-          </p>
-        </div>
+        </button>
 
-        <!-- Case 3: India #WithGalaxy -->
-        <div class="group relative rounded-3xl overflow-hidden border border-nue-border bg-nue-dark p-8 space-y-6 hover:border-purple-400/60 transition-all">
-          <div class="flex items-center justify-between text-xs font-mono text-slate-400">
-            <span class="px-3 py-1 rounded-full bg-nue-border text-white uppercase font-bold">Samsung India</span>
-            <span class="text-purple-400 font-semibold flex items-center gap-1">🏆 2× Guinness World Records</span>
+        <button type="button" data-case-id="withgalaxy" data-cursor="Open Case" class="cinema-card text-left group bg-[#121217] hover:bg-[#1a1a22] overflow-hidden">
+          <div class="aspect-[16/9] overflow-hidden relative bg-[#09090b]">
+            <img src="assets/campaigns/with_galaxy_mosaic.jpg" alt="India #WithGalaxy Guinness World Record Mosaic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute top-4 left-4 px-3 py-1 bg-[#09090b] text-[#d4af37] text-sm font-bold">2x Guinness Records</div>
           </div>
-          <div>
-            <h3 class="text-3xl font-display font-black text-white uppercase group-hover:text-purple-300 transition-colors">
-              India #WithGalaxy x Kabir Khan
+          <div class="p-6 sm:p-7 space-y-2">
+            <div class="flex items-center justify-between text-sm text-[#9e9da6]">
+              <span>Samsung India · Kabir Khan</span>
+              <span class="text-[#d4af37] font-bold">31,000+ Submissions</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-black tracking-tight group-hover:text-[#d4af37] transition-colors">
+              India #WithGalaxy Mosaic
             </h3>
-            <p class="text-sm font-mono text-slate-400 mt-1">Galaxy S Series Photography Movement</p>
+            <p class="text-base text-[#d6d4ce] line-clamp-2">Pan-India smartphone photography movement with Kabir Khan earning two official Guinness World Records.</p>
           </div>
-          <div class="aspect-[16/9] rounded-2xl overflow-hidden bg-nue-black relative flex items-center justify-center border border-nue-border">
-            <div class="absolute inset-0 bg-gradient-to-t from-nue-black via-nue-black/40 to-transparent opacity-80"></div>
-            <div class="text-center p-6 space-y-2 z-10">
-              <span class="text-5xl font-display font-black text-white tracking-tight">31,000+</span>
-              <p class="text-xs font-mono text-purple-300">Creator Entries & Giant Digital Mosaic</p>
-            </div>
-            <div class="absolute top-4 right-4 z-20 w-11 h-11 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white border border-white/20 group-hover:bg-purple-500 transition-all">
-              ▶
-            </div>
-          </div>
-          <p class="text-sm text-slate-300 leading-relaxed font-light">
-            Spearheaded nationwide challenge with filmmaker Kabir Khan and 30+ regional photographers. Secured two Guinness World Records: Largest Smartphone Photography Competition and Largest Online Collaborative Photo Mosaic.
-          </p>
-        </div>
+        </button>
 
-        <!-- Case 4: TVF Panchayat & Permanent Roommates -->
-        <div class="group relative rounded-3xl overflow-hidden border border-nue-border bg-nue-dark p-8 space-y-6 hover:border-orange-400/60 transition-all">
-          <div class="flex items-center justify-between text-xs font-mono text-slate-400">
-            <span class="px-3 py-1 rounded-full bg-nue-border text-white uppercase font-bold">The Viral Fever (TVF)</span>
-            <span class="text-orange-400 font-semibold">Native Content IP</span>
+        <button type="button" data-case-id="panchayat" data-cursor="Open Case" class="cinema-card text-left group bg-[#121217] hover:bg-[#1a1a22] overflow-hidden">
+          <div class="aspect-[16/9] overflow-hidden relative bg-[#09090b]">
+            <img src="assets/campaigns/tvf_panchayat.jpg" alt="TVF Panchayat Phulera Village x Samsung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute top-4 left-4 px-3 py-1 bg-[#09090b] text-sm font-bold">Native Content IP</div>
           </div>
-          <div>
-            <h3 class="text-3xl font-display font-black text-white uppercase group-hover:text-orange-300 transition-colors">
-              Panchayat (Phulera Village) x Samsung
+          <div class="p-6 sm:p-7 space-y-2">
+            <div class="flex items-center justify-between text-sm text-[#9e9da6]">
+              <span>The Viral Fever · Galaxy A16</span>
+              <span class="text-[#ff4d29] font-bold">Cult Viral Recall</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-black tracking-tight group-hover:text-[#ff4d29] transition-colors">
+              Panchayat (Phulera) x Samsung
             </h3>
-            <p class="text-sm font-mono text-slate-400 mt-1">Galaxy A16 5G & Permanent Roommates</p>
+            <p class="text-base text-[#d6d4ce] line-clamp-2">Episodic storytelling with Prahlad, Vikas, and Binod embedding Samsung into India's beloved OTT universe.</p>
           </div>
-          <div class="aspect-[16/9] rounded-2xl overflow-hidden bg-nue-black relative flex items-center justify-center border border-nue-border">
-            <div class="absolute inset-0 bg-gradient-to-t from-nue-black via-nue-black/40 to-transparent opacity-80"></div>
-            <div class="text-center p-6 space-y-2 z-10">
-              <span class="text-4xl sm:text-5xl font-display font-black text-white tracking-tight">CULT RECALL</span>
-              <p class="text-xs font-mono text-orange-300">Prahlad, Vikas & Binod Situational Sketches</p>
-            </div>
-            <div class="absolute top-4 right-4 z-20 w-11 h-11 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white border border-white/20 group-hover:bg-orange-500 transition-all">
-              ▶
-            </div>
-          </div>
-          <p class="text-sm text-slate-300 leading-relaxed font-light">
-            Co-produced branded episodic sketches with Prahlad (Faisal Malik), Vikas (Chandan Roy), and Binod (Ashok Pathak) in Phulera village, embedding Samsung seamlessly into beloved Indian storytelling with organic virality.
-          </p>
-        </div>
+        </button>
 
-        <!-- Case 5: #PlayGalaxy Esports Tournament -->
-        <div class="group relative rounded-3xl overflow-hidden border border-nue-border bg-nue-dark p-8 space-y-6 hover:border-blue-400/60 transition-all lg:col-span-2">
-          <div class="flex items-center justify-between text-xs font-mono text-slate-400">
-            <span class="px-3 py-1 rounded-full bg-nue-border text-white uppercase font-bold">Gaming & Youth Culture</span>
-            <span class="text-blue-400 font-semibold">4 Seasons · 350M+ Reach</span>
+        <button type="button" data-case-id="playgalaxy" data-cursor="Open Case" class="cinema-card text-left group bg-[#121217] hover:bg-[#1a1a22] overflow-hidden">
+          <div class="aspect-[16/9] overflow-hidden relative bg-[#09090b]">
+            <img src="assets/campaigns/play_galaxy_esports.jpg" alt="#PlayGalaxy Esports Arena" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute top-4 left-4 px-3 py-1 bg-[#09090b] text-sm font-bold">4 Seasons · Gaming</div>
           </div>
-          <div class="grid lg:grid-cols-12 gap-8 items-center">
-            <div class="lg:col-span-7 space-y-4">
-              <h3 class="text-3xl font-display font-black text-white uppercase group-hover:text-blue-300 transition-colors">
-                #PlayGalaxy: Samsung's Flagship Gaming IP
-              </h3>
-              <p class="text-sm font-mono text-slate-400">Headline Creators: CarryMinati, Techno Gamerz, ScoutOP & Dynamo Gaming</p>
-              <p class="text-sm text-slate-300 leading-relaxed font-light">
-                Created and scaled Samsung's marquee annual mobile gaming tournament across 4 editions. Integrated high-performance Galaxy thermal management and display refresh rates directly into competitive live-streamed matches, driving high adoption among India's 400M+ mobile gamers.
-              </p>
+          <div class="p-6 sm:p-7 space-y-2">
+            <div class="flex items-center justify-between text-sm text-[#9e9da6]">
+              <span>CarryMinati &amp; Techno Gamerz</span>
+              <span class="text-[#ff4d29] font-bold">350M+ Reach</span>
             </div>
-            <div class="lg:col-span-5 grid grid-cols-2 gap-4">
-              <div class="p-5 rounded-2xl bg-nue-black border border-nue-border text-center">
-                <div class="text-3xl font-display font-black text-white">350M+</div>
-                <div class="text-[10px] font-mono text-slate-400 uppercase mt-1">Total Digital Reach</div>
-              </div>
-              <div class="p-5 rounded-2xl bg-nue-black border border-nue-border text-center">
-                <div class="text-3xl font-display font-black text-blue-400">4 Seasons</div>
-                <div class="text-[10px] font-mono text-slate-400 uppercase mt-1">Multi-Year IP</div>
-              </div>
-            </div>
+            <h3 class="text-xl sm:text-2xl font-black tracking-tight group-hover:text-[#ff4d29] transition-colors">
+              #PlayGalaxy Esports IP
+            </h3>
+            <p class="text-base text-[#d6d4ce] line-clamp-2">Multi-season competitive gaming tournament scaling Samsung flagship performance across 400M+ gamers.</p>
           </div>
-        </div>
+        </button>
 
       </div>
+      </div>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- Complete Interactive Samsung Campaign Archive (All 32+ Campaigns) -->
-  <section id="campaign-index" class="py-24 border-b border-nue-border/60">
-    <div class="max-w-[1400px] mx-auto px-6 sm:px-10">
-      
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-        <div>
-          <span class="text-xs font-mono uppercase tracking-widest text-nue-accent block mb-2 font-bold">Cheil India · Samsung Full Digital Mandate</span>
-          <h2 class="text-4xl sm:text-6xl font-display font-black text-white uppercase tracking-tight">
-            The Campaign Archive
+    <!-- 4. INTERACTIVE AEO / GEO & REDDIT INGESTION LAB -->
+    <section id="aeo-engine" class="bg-[#121217] py-24 px-5 sm:px-8">
+      <div class="max-w-[1440px] mx-auto grid lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-5 space-y-6">
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+            AEO / GEO &amp; Reddit Lab
           </h2>
-          <p class="text-slate-400 text-sm font-mono mt-2">
-            Every major launch, strategic partnership, and brand film directed across Smartphones, Televisions, Wearables, and CSR.
+          <p class="text-base text-[#d6d4ce] leading-relaxed">
+            Pioneered India’s first enterprise Generative Engine Optimization framework for Galaxy S25 &amp; S26 flagships. Select a real buyer prompt to inspect how community discourse feeds LLM Retrieval Augmented Generation.
           </p>
+
+          <div class="space-y-3 pt-2">
+            <div class="text-sm font-bold text-[#f4f2ed]">Select Buyer Prompt:</div>
+            <button type="button" data-aeo-key="camera" aria-pressed="true" class="w-full text-left px-4 py-3.5 bg-[#ff4d29] text-[#09090b] text-sm font-bold transition-colors">
+              Best AI camera phone with 100x zoom in India 2026
+            </button>
+            <button type="button" data-aeo-key="switcher" aria-pressed="false" class="w-full text-left px-4 py-3.5 bg-[#1a1a22] hover:bg-[#24242f] text-[#f4f2ed] text-sm font-bold transition-colors">
+              Should I switch from iPhone to Galaxy S25/S26 Ultra?
+            </button>
+            <button type="button" data-aeo-key="foldable" aria-pressed="false" class="w-full text-left px-4 py-3.5 bg-[#1a1a22] hover:bg-[#24242f] text-[#f4f2ed] text-sm font-bold transition-colors">
+              Best foldable phone for multitasking and productivity
+            </button>
+          </div>
         </div>
 
-        <!-- Search & Filter Controls -->
-        <div class="flex flex-wrap items-center gap-3">
-          <input type="text" id="campaign-search" placeholder="Search campaign, award, or device..." class="px-4 py-2.5 rounded-full bg-nue-dark border border-nue-border text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:border-nue-accent w-72">
-          <select id="category-filter" class="px-4 py-2.5 rounded-full bg-nue-dark border border-nue-border text-xs font-mono text-white focus:outline-none focus:border-nue-accent">
-            <option value="all">All Campaigns (32+)</option>
-            <option value="awards">🏆 Award Winners Only</option>
-            <option value="Smartphones">Smartphones</option>
-            <option value="Televisions">Televisions & AI</option>
-            <option value="Wearables">Wearables & Health</option>
-            <option value="Brand">Brand & Sports IPs</option>
-            <option value="CSR">CSR & Sustainability</option>
-          </select>
+        <!-- Live Telemetry Console -->
+        <div class="lg:col-span-7 bg-[#09090b] p-6 sm:p-8 space-y-6">
+          <div class="flex items-center justify-between text-sm text-[#9e9da6]">
+            <span class="font-bold text-[#f4f2ed]">Enterprise RAG Pipeline Telemetry</span>
+            <span class="text-emerald-400 font-bold">Live Simulation</span>
+          </div>
+
+          <div class="space-y-1">
+            <div class="text-sm text-[#9e9da6]">Target LLM Query</div>
+            <div id="aeo-sim-query" class="text-lg font-bold text-[#f4f2ed]"></div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <div class="text-sm text-[#9e9da6]">Seeded Subreddit Nodes</div>
+              <div id="aeo-sim-subreddits" class="flex flex-wrap gap-2"></div>
+            </div>
+            <div class="space-y-2">
+              <div class="text-sm text-[#9e9da6]">Crawler Ingestion</div>
+              <div id="aeo-sim-crawlers" class="flex flex-wrap gap-2"></div>
+            </div>
+          </div>
+
+          <div class="p-4 bg-[#121217] space-y-1">
+            <div class="text-sm text-[#9e9da6]">Semantic Schema Grounding</div>
+            <code id="aeo-sim-schema" class="text-sm text-[#f4f2ed] block"></code>
+          </div>
+
+          <div class="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <span id="aeo-sim-som" class="text-xl sm:text-2xl font-black text-[#ff4d29] block"></span>
+              <span class="text-sm text-[#9e9da6]">Measured Share of Model Lift</span>
+            </div>
+            <p id="aeo-sim-result" class="text-base text-[#d6d4ce] max-w-sm leading-relaxed"></p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- The Campaign Table / Grid -->
-      <div class="divide-y divide-nue-border/80 border-y border-nue-border" id="campaign-list">
-        <!-- Rendered dynamically by script.js with all 32+ verified items -->
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Generative AI / AEO Architecture Section -->
-  <section id="aeo-engine" class="py-24 border-b border-nue-border/60 relative">
-    <div class="max-w-[1400px] mx-auto px-6 sm:px-10">
-      
-      <div class="max-w-3xl mb-16">
-        <span class="text-xs font-mono uppercase tracking-widest text-cyan-400 block mb-2 font-bold">Next-Gen Search Architecture</span>
-        <h2 class="text-4xl sm:text-6xl font-display font-black text-white uppercase tracking-tight">
-          AEO / GEO & Reddit Brand Seeding
-        </h2>
-        <p class="text-slate-300 text-base mt-4 font-light leading-relaxed">
-          Pioneered India’s first large-scale Generative Engine Optimization (GEO) framework for enterprise consumer electronics, engineering how LLMs ingest and recommend Samsung Galaxy flagships:
-        </p>
-      </div>
-
-      <div class="grid lg:grid-cols-3 gap-8">
+    <!-- 5. SPLIT-STAGE LEADERSHIP & CAREER CHRONOLOGY -->
+    <section id="about" class="bg-[#09090b] py-24 px-5 sm:px-8">
+      <div class="max-w-[1440px] mx-auto grid lg:grid-cols-12 gap-12 items-start">
         
-        <div class="p-8 rounded-3xl border border-nue-border bg-nue-dark space-y-4 hover:border-cyan-500/50 transition-all">
-          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-mono font-bold text-xs">
-            01
-          </div>
-          <h3 class="text-2xl font-display font-bold text-white">Citation Seeding</h3>
-          <p class="text-slate-300 text-sm leading-relaxed font-light">
-            Reddit holds direct crawler ingestion partnerships with OpenAI and Google. Structuring authentic, high-reputation discourse in <code class="text-cyan-300 bg-nue-black px-1.5 py-0.5 rounded font-mono text-xs">r/Android</code> and <code class="text-cyan-300 bg-nue-black px-1.5 py-0.5 rounded font-mono text-xs">r/gadgets</code> feeds real-time LLM RAG pipelines.
-          </p>
-        </div>
-
-        <div class="p-8 rounded-3xl border border-nue-border bg-nue-dark space-y-4 hover:border-cyan-500/50 transition-all">
-          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-mono font-bold text-xs">
-            02
-          </div>
-          <h3 class="text-2xl font-display font-bold text-white">Semantic Schema</h3>
-          <p class="text-slate-300 text-sm leading-relaxed font-light">
-            Structuring device camera benchmarks, zoom specifications, and pricing tables so LLM parsers recognize Samsung Galaxy as the authoritative ground truth for high-intent purchase queries.
-          </p>
-        </div>
-
-        <div class="p-8 rounded-3xl border border-nue-border bg-nue-dark space-y-4 hover:border-cyan-500/50 transition-all">
-          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-mono font-bold text-xs">
-            03
-          </div>
-          <h3 class="text-2xl font-display font-bold text-white">Share of Model (SoM)</h3>
-          <p class="text-slate-300 text-sm leading-relaxed font-light">
-            Replacing vanity CTR with LLM citation frequency and recommendation share within generated answers across Galaxy S25 & S26 launch cycles across ChatGPT, Gemini, and Perplexity.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Venture Incubation Section (Aquante & Morpatra) -->
-  <section id="ventures" class="py-24 border-b border-nue-border/60 bg-nue-dark/50">
-    <div class="max-w-[1400px] mx-auto px-6 sm:px-10">
-      
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-        <div>
-          <span class="text-xs font-mono uppercase tracking-widest text-nue-accent block mb-2 font-bold">0-to-1 Incubation · Aug 2026 – Present</span>
-          <h2 class="text-4xl sm:text-6xl font-display font-black text-white uppercase tracking-tight">
-            Venture Incubation
+        <div class="lg:col-span-5 space-y-6">
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+            Both Sides Of The Table
           </h2>
-          <p class="text-slate-300 text-sm sm:text-base font-light mt-2 max-w-2xl">
-            Architecting modern digital storefronts, supply chain agreements, and Go-To-Market strategies for two emerging ventures prior to operational handover.
+          <p class="text-base text-[#d6d4ce] leading-relaxed">
+            Operating as an in-house <strong class="text-[#f4f2ed]">Brand Custodian</strong> directing external agencies at Vivo and Micromax, and as an <strong class="text-[#f4f2ed]">Account Director</strong> commanding Samsung India’s full digital mandate at Cheil provides a rare 360-degree commercial lens.
           </p>
+          <div class="grid grid-cols-2 gap-4 pt-2 text-sm">
+            <div class="p-4 bg-[#121217] space-y-1">
+              <div class="text-[#f4f2ed] font-bold">IIT Delhi (DMS)</div>
+              <div class="text-[#d6d4ce]">CEP · Digital Marketing &amp; Analytics (2017)</div>
+            </div>
+            <div class="p-4 bg-[#121217] space-y-1">
+              <div class="text-[#f4f2ed] font-bold">@7enstrings</div>
+              <div class="text-[#d6d4ce]">7-String Guitar · Rhythm informs film pacing</div>
+            </div>
+          </div>
         </div>
 
-        <div class="px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-          <span>Day-to-day operations transitioned to family stewardship · 100% available for enterprise roles</span>
+        <div class="lg:col-span-7 space-y-4">
+          <div class="timeline-row p-6 bg-[#121217]">
+            <span class="text-sm text-[#d4af37] font-bold">Aug 2026 – Present</span>
+            <h3 class="text-xl font-bold mt-1">Independent Brand &amp; Growth Advisor</h3>
+            <p class="text-base text-[#d6d4ce] mt-2">Built 0-to-1 commercial GTM, AI-native web storefronts &amp; supply chains for Aquante and Morpatra; transitioned operations to family stewardship—100% available for enterprise roles.</p>
+          </div>
+
+          <div class="timeline-row p-6 bg-[#121217]">
+            <span class="text-sm text-[#ff4d29] font-bold">Mar 2023 – Aug 2026</span>
+            <h3 class="text-xl font-bold mt-1">Cheil India (Samsung India) · Account Director</h3>
+            <p class="text-base text-[#d6d4ce] mt-2">Commanded Samsung India’s digital, social &amp; content mandate across Smartphones, TVs &amp; Wearables. Led 15+ team; won 9 Effie 2025 Metals, 2x Guinness Records, Clio Sports Bronze.</p>
+          </div>
+
+          <div class="timeline-row p-6 bg-[#121217]">
+            <span class="text-sm text-[#9e9da6] font-bold">Mar 2021 – Dec 2022</span>
+            <h3 class="text-xl font-bold mt-1">Micromax (IN Mobiles) · Digital Marketing Head</h3>
+            <p class="text-base text-[#d6d4ce] mt-2">Reported to CEO on commercial P&amp;L, brand relaunch, Havas Media &amp; PR Pundit governance, and Amazon/Flipkart marketplace CRO.</p>
+          </div>
+
+          <div class="timeline-row p-6 bg-[#121217]">
+            <span class="text-sm text-[#9e9da6] font-bold">Jun 2019 – Feb 2021</span>
+            <h3 class="text-xl font-bold mt-1">Showtime Events · Manager – Digital Marketing</h3>
+            <p class="text-base text-[#d6d4ce] mt-2">Integrated digital campaigns, MMM, and multi-touch attribution for Tata Motors, Cisco, and Hero MotoCorp.</p>
+          </div>
+
+          <div class="timeline-row p-6 bg-[#121217]">
+            <span class="text-sm text-[#9e9da6] font-bold">Jan 2017 – Jan 2019</span>
+            <h3 class="text-xl font-bold mt-1">Vivo Smartphones India · Assistant Manager</h3>
+            <p class="text-base text-[#d6d4ce] mt-2">Directed ₹100 Cr+ annual media across Vivo IPL &amp; FIFA World Cup 2018; conceived Vivo ViewTube (550+ DVCs, Shorty Award).</p>
+          </div>
+
+          <div class="timeline-row p-6 bg-[#121217]">
+            <span class="text-sm text-[#9e9da6] font-bold">Feb 2013 – Dec 2016</span>
+            <h3 class="text-xl font-bold mt-1">World Phone IT Services &amp; UCWeb India (Alibaba)</h3>
+            <p class="text-base text-[#d6d4ce] mt-2">Foundation in B2B performance acquisition and cross-border social/ORM strategy for UC Browser India.</p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="grid md:grid-cols-2 gap-8">
-        
-        <!-- Venture 01: Aquante -->
-        <div class="p-8 rounded-3xl bg-nue-card border border-nue-border hover:border-blue-500/50 transition-all space-y-6">
-          <div class="flex items-center justify-between">
-            <span class="px-3 py-1 rounded-full bg-blue-500/15 text-blue-300 border border-blue-500/30 text-xs font-mono font-bold uppercase">
-              Venture 01 · Industrial & Commercial B2B
-            </span>
-            <span class="text-xs font-mono text-slate-400">Partnered with Father</span>
-          </div>
-          <div>
-            <h3 class="text-2xl font-display font-black text-white uppercase">
-              Aquante
-            </h3>
-            <p class="text-xs font-mono text-blue-400 mt-1">Commercial & Industrial Water Treatment Solutions</p>
-          </div>
-          <p class="text-sm text-slate-300 font-light leading-relaxed">
-            Spearheaded brand identity, technical cataloging, and digital infrastructure for an enterprise water management venture providing commercial RO systems, industrial water softeners, and DM plants. Built high-intent B2B inbound acquisition funnels and Generative Engine Optimization (GEO) targeting industrial facility managers.
+    <!-- 6. VENTURE INCUBATION: AQUANTE & MORPATRA -->
+    <section id="ventures" class="bg-[#121217] py-24 px-5 sm:px-8">
+      <div class="max-w-[1440px] mx-auto space-y-10">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight">Venture Incubation</h2>
+          <p class="text-sm text-emerald-300 bg-emerald-500/15 px-4 py-2 font-bold">
+            Operations transitioned to dedicated family partners · 100% available for enterprise leadership
           </p>
-          <div class="flex flex-wrap gap-2 pt-2">
-            <span class="px-2.5 py-1 rounded bg-nue-black text-[11px] font-mono text-slate-300 border border-nue-border">Commercial RO</span>
-            <span class="px-2.5 py-1 rounded bg-nue-black text-[11px] font-mono text-slate-300 border border-nue-border">Industrial Softeners</span>
-            <span class="px-2.5 py-1 rounded bg-nue-black text-[11px] font-mono text-slate-300 border border-nue-border">B2B Lead Funnels</span>
-            <span class="px-2.5 py-1 rounded bg-nue-black text-[11px] font-mono text-slate-300 border border-nue-border">GEO & Technical SEO</span>
-          </div>
         </div>
 
-        <!-- Venture 02: Morpatra -->
-        <div class="p-8 rounded-3xl bg-nue-card border border-nue-border hover:border-amber-500/50 transition-all space-y-6">
-          <div class="flex items-center justify-between">
-            <span class="px-3 py-1 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 text-xs font-mono font-bold uppercase">
-              Venture 02 · Premium D2C Jewellery
-            </span>
-            <span class="text-xs font-mono text-slate-400">Partnered with Wife</span>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="p-8 bg-[#09090b] space-y-4">
+            <h3 class="text-2xl sm:text-3xl font-black">Aquante</h3>
+            <p class="text-base text-[#ff4d29] font-bold">Commercial &amp; Industrial Water Treatment Solutions · Industrial B2B (Partnered with Father)</p>
+            <p class="text-base text-[#d6d4ce] leading-relaxed">
+              Built B2B digital infrastructure, technical cataloging for commercial RO plants and industrial water softeners, vendor agreements, and Generative Engine Optimization (GEO) inbound lead pipelines.
+            </p>
           </div>
-          <div>
-            <h3 class="text-2xl font-display font-black text-white uppercase">
-              Morpatra
-            </h3>
-            <p class="text-xs font-mono text-amber-300 mt-1">Premium Demi-Fine Jewellery Brand</p>
-          </div>
-          <p class="text-sm text-slate-300 font-light leading-relaxed">
-            Architected the luxury brand identity, packaging aesthetics, and Shopify storefront for a contemporary demi-fine jewellery brand. Designed a social-first visual storytelling playbook, creator seeding network, and high-conversion Instagram Reels framework driving organic brand prestige.
-          </p>
-          <div class="flex flex-wrap gap-2 pt-2">
-            <span class="px-2.5 py-1 rounded bg-nue-black text-[11px] font-mono text-slate-300 border border-nue-border">Demi-Fine Jewellery</span>
-            <span class="px-2.5 py-1 rounded bg-nue-black text-[11px] font-mono text-slate-300 border border-nue-border">Social-First Content</span>
-            <span class="px-2.5 py-1 rounded bg-nue-black text-[11px] font-mono text-slate-300 border border-nue-border">Creator Seeding</span>
-            <span class="px-2.5 py-1 rounded bg-nue-black text-[11px] font-mono text-slate-300 border border-nue-border">D2C E-Commerce</span>
+
+          <div class="p-8 bg-[#09090b] space-y-4">
+            <h3 class="text-2xl sm:text-3xl font-black">Morpatra</h3>
+            <p class="text-base text-[#d4af37] font-bold">Premium Demi-Fine Jewellery Brand · Luxury D2C (Partnered with Wife)</p>
+            <p class="text-base text-[#d6d4ce] leading-relaxed">
+              Architected luxury brand identity, packaging sourcing, Shopify conversion architecture, and a social-first visual storytelling &amp; creator seeding strategy for anti-tarnish demi-fine jewellery.
+            </p>
           </div>
         </div>
-
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- 7. INTERACTIVE 32+ CAMPAIGN ARCHIVE -->
+    <section id="campaign-index" class="bg-[#09090b] py-24 px-5 sm:px-8">
+      <div class="max-w-[1440px] mx-auto space-y-8">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight">Campaign Archive (32+)</h2>
 
-  <!-- Leadership & Philosophy Section -->
-  <section id="about" class="py-24 border-b border-nue-border/60 bg-nue-dark/30">
-    <div class="max-w-[1400px] mx-auto px-6 sm:px-10">
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <input type="text" id="campaign-search" placeholder="Search campaign, award, device..." class="px-4 py-2.5 bg-[#121217] border border-white/25 text-sm text-[#f4f2ed] placeholder-[#9e9da6] focus:outline-none focus:border-[#ff4d29] sm:w-72">
+          </div>
+        </div>
+
+        <!-- Filter Pills -->
+        <div class="flex flex-wrap gap-2" role="group" aria-label="Filter campaigns by category">
+          <button type="button" data-filter-cat="all" aria-pressed="true" class="px-4 py-2 bg-[#f4f2ed] text-[#09090b] text-sm font-bold transition-colors">All (32+)</button>
+          <button type="button" data-filter-cat="awards" aria-pressed="false" class="px-4 py-2 bg-[#121217] text-[#d6d4ce] hover:text-[#f4f2ed] text-sm font-bold transition-colors">Award Winners</button>
+          <button type="button" data-filter-cat="Smartphones" aria-pressed="false" class="px-4 py-2 bg-[#121217] text-[#d6d4ce] hover:text-[#f4f2ed] text-sm font-bold transition-colors">Smartphones</button>
+          <button type="button" data-filter-cat="Televisions" aria-pressed="false" class="px-4 py-2 bg-[#121217] text-[#d6d4ce] hover:text-[#f4f2ed] text-sm font-bold transition-colors">Televisions &amp; AI</button>
+          <button type="button" data-filter-cat="Wearables" aria-pressed="false" class="px-4 py-2 bg-[#121217] text-[#d6d4ce] hover:text-[#f4f2ed] text-sm font-bold transition-colors">Wearables</button>
+          <button type="button" data-filter-cat="CSR" aria-pressed="false" class="px-4 py-2 bg-[#121217] text-[#d6d4ce] hover:text-[#f4f2ed] text-sm font-bold transition-colors">CSR &amp; Education</button>
+        </div>
+
+        <div id="campaign-list" class="space-y-2">
+          <!-- Rendered by script.js -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 8. INVERTED MONUMENT FOOTER & RESUME SUITE -->
+  <footer id="contact" class="relative z-10 bg-[#f3f4f6] text-[#09090b] pt-20 pb-12 px-5 sm:px-8">
+    <div class="max-w-[1440px] mx-auto space-y-16">
       
-      <div class="grid lg:grid-cols-12 gap-12 items-center">
-        
-        <div class="lg:col-span-6 space-y-6">
-          <span class="text-xs font-mono uppercase tracking-widest text-nue-accent block font-bold">Executive Vantage Point</span>
-          <h2 class="text-4xl sm:text-6xl font-display font-black text-white uppercase tracking-tight">
-            Operating From <br>Both Sides <br>Of The Table.
+      <div class="grid lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-7 space-y-4">
+          <h2 class="text-4xl sm:text-6xl font-black tracking-tight leading-none">
+            Let’s Build Iconic Scale
           </h2>
-          <p class="text-slate-300 text-base leading-relaxed font-light">
-            Operating as an in-house <strong class="text-white font-semibold">Brand Custodian</strong> directing external media agencies at <strong class="text-white font-semibold">Vivo and Micromax</strong>, and as an agency <strong class="text-white font-semibold">Account Director</strong> leading <strong class="text-white font-semibold">Samsung</strong> at Cheil gives me an executive vantage point that few possess.
+          <p class="text-base text-[#09090b]/80 max-w-xl">
+            Open to VP / Head of Marketing, Brand Custodian, and APAC Partnerships leadership mandates in Delhi-NCR or Singapore.
           </p>
-          <p class="text-slate-300 text-sm leading-relaxed font-light">
-            Certified across all 6 modules of <strong class="text-white">Google Ads Digital Guru</strong> (awarded by Sanjay Gupta, President APAC, Google) and trained in Executive Management at <strong class="text-white">IIT Delhi (DMS)</strong>, I combine mathematical incrementality (MMM, geo-holdouts) with Hollywood/Bollywood-grade storytelling instincts.
-          </p>
-        </div>
-
-        <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="p-6 rounded-2xl border border-nue-border bg-nue-dark space-y-2">
-            <span class="text-3xl">🎸</span>
-            <h4 class="font-display font-bold text-white text-lg">@7enstrings</h4>
-            <p class="text-xs text-slate-400 font-light leading-relaxed">7-string electric guitar composition and sonic rhythm that directly inform narrative video pacing, music scoring, and emotional cadence.</p>
-          </div>
-          <div class="p-6 rounded-2xl border border-nue-border bg-nue-dark space-y-2">
-            <span class="text-3xl">📈</span>
-            <h4 class="font-display font-bold text-white text-lg">₹100 Cr+ Media</h4>
-            <p class="text-xs text-slate-400 font-light leading-relaxed">Full-funnel media orchestration across Vivo IPL, FIFA World Cup, and Samsung flagship smartphone, TV, and appliance launches.</p>
-          </div>
-          <div class="p-6 rounded-2xl border border-nue-border bg-nue-dark space-y-2">
-            <span class="text-3xl">🎓</span>
-            <h4 class="font-display font-bold text-white text-lg">IIT Delhi (DMS)</h4>
-            <p class="text-xs text-slate-400 font-light leading-relaxed">Executive Management Programme in Digital Marketing & Business Analytics (CEP, 2017) grounding creative ambition in rigorous data science.</p>
-          </div>
-          <div class="p-6 rounded-2xl border border-nue-border bg-nue-dark space-y-2">
-            <span class="text-3xl">👥</span>
-            <h4 class="font-display font-bold text-white text-lg">15+ Team Leadership</h4>
-            <p class="text-xs text-slate-400 font-light leading-relaxed">Proven track record mentoring and governing multi-disciplinary teams across social strategy, performance media, creative production, and analytics.</p>
+          <div class="pt-4">
+            <a href="mailto:anshu.seth007@gmail.com" class="inline-block text-2xl sm:text-4xl font-black underline decoration-[#ff4d29] decoration-2 underline-offset-8 hover:text-[#ff4d29] transition-colors break-all">
+              anshu.seth007@gmail.com
+            </a>
           </div>
         </div>
 
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Career Architecture Timeline -->
-  <section class="py-24 border-b border-nue-border/60">
-    <div class="max-w-[1400px] mx-auto px-6 sm:px-10">
-      
-      <div class="mb-14">
-        <span class="text-xs font-mono uppercase tracking-widest text-nue-accent block mb-2 font-bold">13-Year Chronology</span>
-        <h2 class="text-4xl sm:text-5xl font-display font-black text-white uppercase tracking-tight">
-          Career Trajectory
-        </h2>
-      </div>
-
-      <div class="space-y-6">
-        
-        <!-- Role 1 -->
-        <div class="p-6 sm:p-8 rounded-2xl bg-nue-dark border border-nue-border hover:border-nue-border/80 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div class="space-y-1">
-            <div class="flex items-center gap-3">
-              <span class="px-2.5 py-0.5 rounded bg-amber-400/15 text-amber-300 text-[11px] font-mono font-bold border border-amber-400/30">CURRENT</span>
-              <h4 class="text-xl font-display font-bold text-white">Independent Brand & Growth Advisor</h4>
-            </div>
-            <p class="text-sm font-mono text-slate-400">Venture Incubation — Aquante & Morpatra</p>
-            <p class="text-xs text-slate-400 max-w-2xl font-light">0-to-1 brand creation, AI-native web infrastructure, and e-commerce launch; transitioned operational stewardship to family partners.</p>
+        <!-- Resume Suite Hub -->
+        <div class="lg:col-span-5 bg-white p-6 sm:p-8 space-y-4">
+          <div class="text-base font-black">Executive Resume Suite</div>
+          <div class="flex flex-col gap-2.5">
+            <a href="/resume/Utkarsh_Seth_Executive_Resume.pdf" download="Utkarsh_Seth_Executive_Resume.pdf" class="px-4 py-3 bg-[#09090b] text-[#f4f2ed] hover:bg-[#ff4d29] hover:text-[#09090b] text-sm font-bold flex items-center justify-between transition-colors">
+              <span>Executive Visual Resume (PDF)</span>
+              <span>↓</span>
+            </a>
+            <a href="/resume/Utkarsh_Seth_ATS_Certified_Resume.pdf" download="Utkarsh_Seth_ATS_Certified_Resume.pdf" class="px-4 py-3 bg-[#eceae4] hover:bg-[#d8d5cd] text-sm font-bold flex items-center justify-between transition-colors">
+              <span>ATS-Certified 2-Page Resume (PDF)</span>
+              <span>↓</span>
+            </a>
+            <a href="/resume/Utkarsh_Seth_Netflix_APAC_Resume.pdf" download="Utkarsh_Seth_Netflix_APAC_Resume.pdf" class="px-4 py-3 bg-[#eceae4] hover:bg-[#d8d5cd] text-sm font-bold flex items-center justify-between transition-colors">
+              <span>APAC Partnerships Tailored CV (PDF)</span>
+              <span>↓</span>
+            </a>
           </div>
-          <div class="text-right shrink-0">
-            <span class="text-xs font-mono text-amber-300 font-bold block">Aug 2026 – Present</span>
-            <span class="text-[11px] font-mono text-emerald-400">100% Available for Enterprise Roles</span>
-          </div>
-        </div>
-
-        <!-- Role 2 -->
-        <div class="p-6 sm:p-8 rounded-2xl bg-nue-dark border border-nue-border hover:border-nue-border/80 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div class="space-y-1">
-            <div class="flex items-center gap-3">
-              <span class="px-2.5 py-0.5 rounded bg-blue-500/15 text-blue-300 text-[11px] font-mono font-bold border border-blue-500/30">AGENCY MANDATE</span>
-              <h4 class="text-xl font-display font-bold text-white">Account Director — Social, Content & Digital</h4>
-            </div>
-            <p class="text-sm font-mono text-slate-400">Cheil India (Samsung India – Full Digital Account)</p>
-            <p class="text-xs text-slate-400 max-w-2xl font-light">Commanded Samsung India's digital mandate; 9 Effie India 2025 Metals, 2× Guinness World Records, Clio Sports Bronze, 350M+ esports reach.</p>
-          </div>
-          <div class="text-right shrink-0">
-            <span class="text-xs font-mono text-slate-300 block">Mar 2023 – Aug 2026</span>
-            <span class="text-[11px] font-mono text-slate-500">Gurgaon, India</span>
-          </div>
-        </div>
-
-        <!-- Role 3 -->
-        <div class="p-6 sm:p-8 rounded-2xl bg-nue-dark border border-nue-border hover:border-nue-border/80 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div class="space-y-1">
-            <div class="flex items-center gap-3">
-              <span class="px-2.5 py-0.5 rounded bg-nue-border text-slate-300 text-[11px] font-mono font-bold">BRAND CUSTODIAN</span>
-              <h4 class="text-xl font-display font-bold text-white">Digital Marketing Head — Brand & Marketing</h4>
-            </div>
-            <p class="text-sm font-mono text-slate-400">Micromax Smartphones — IN Mobiles</p>
-            <p class="text-xs text-slate-400 max-w-2xl font-light">Reported to CEO; led brand relaunch, full-funnel media orchestration, agency governance (Havas Media), and marketplace CRO.</p>
-          </div>
-          <div class="text-right shrink-0">
-            <span class="text-xs font-mono text-slate-300 block">Mar 2021 – Dec 2022</span>
-            <span class="text-[11px] font-mono text-slate-500">Gurgaon, India</span>
-          </div>
-        </div>
-
-        <!-- Role 4 -->
-        <div class="p-6 sm:p-8 rounded-2xl bg-nue-dark border border-nue-border hover:border-nue-border/80 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div class="space-y-1">
-            <div class="flex items-center gap-3">
-              <span class="px-2.5 py-0.5 rounded bg-nue-border text-slate-300 text-[11px] font-mono font-bold">EXPERIENTIAL</span>
-              <h4 class="text-xl font-display font-bold text-white">Manager — Digital Marketing</h4>
-            </div>
-            <p class="text-sm font-mono text-slate-400">Showtime Events</p>
-            <p class="text-xs text-slate-400 max-w-2xl font-light">Directing digital and hybrid brand experiences for enterprise clients including Cisco, Hero, and HP.</p>
-          </div>
-          <div class="text-right shrink-0">
-            <span class="text-xs font-mono text-slate-300 block">Jun 2019 – Feb 2021</span>
-            <span class="text-[11px] font-mono text-slate-500">New Delhi, India</span>
-          </div>
-        </div>
-
-        <!-- Role 5 -->
-        <div class="p-6 sm:p-8 rounded-2xl bg-nue-dark border border-nue-border hover:border-nue-border/80 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div class="space-y-1">
-            <div class="flex items-center gap-3">
-              <span class="px-2.5 py-0.5 rounded bg-nue-border text-slate-300 text-[11px] font-mono font-bold">BRAND CUSTODIAN</span>
-              <h4 class="text-xl font-display font-bold text-white">Assistant Manager — Digital Marketing</h4>
-            </div>
-            <p class="text-sm font-mono text-slate-400">Vivo Smartphones India</p>
-            <p class="text-xs text-slate-400 max-w-2xl font-light">Orchestrated ₹100 Cr+ annual media deployments across Vivo IPL & FIFA World Cup; engineered Vivo ViewTube (550+ DVCs, Shorty Award).</p>
-          </div>
-          <div class="text-right shrink-0">
-            <span class="text-xs font-mono text-slate-300 block">Jan 2017 – Jan 2019</span>
-            <span class="text-[11px] font-mono text-slate-500">Gurgaon, India</span>
-          </div>
-        </div>
-
-        <!-- Earlier Roles Summary -->
-        <div class="p-6 rounded-2xl bg-nue-black border border-nue-border/70 flex flex-col sm:flex-row sm:items-center justify-between text-xs font-mono text-slate-400 gap-2">
-          <div>
-            <strong class="text-white">Foundation:</strong> World Phone IT Services (Digital Marketing Lead, 2015–2016) · UCWeb India / Alibaba Group (Social Media Coordinator & ORM, 2013–2015).
-          </div>
-          <span class="text-slate-500 shrink-0">2013–2016</span>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Dedicated Resume Suite Download Section -->
-  <section id="resumes" class="py-20 border-b border-nue-border/60 bg-gradient-to-r from-nue-dark via-nue-card to-nue-dark">
-    <div class="max-w-[1400px] mx-auto px-6 sm:px-10">
-      
-      <div class="p-8 sm:p-12 rounded-3xl border border-nue-border bg-nue-black/60 backdrop-blur-md flex flex-col lg:flex-row items-center justify-between gap-8">
-        <div class="space-y-3 max-w-2xl">
-          <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-nue-accent"></span>
-            <span class="text-xs font-mono uppercase tracking-widest text-slate-300 font-bold">Executive Documentation Suite</span>
-          </div>
-          <h3 class="text-3xl sm:text-4xl font-display font-black text-white uppercase tracking-tight">
-            Download Utkarsh Seth's Curated Resumes
-          </h3>
-          <p class="text-slate-300 text-sm font-light leading-relaxed">
-            Choose between the high-impact visual executive PDF or the clean single-column ATS-certified format tailored for corporate recruiting systems.
-          </p>
-        </div>
-
-        <div class="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto shrink-0">
-          <a href="/resume/Utkarsh_Seth_Executive_Resume.pdf" download="Utkarsh_Seth_Executive_Resume.pdf" class="w-full sm:w-auto px-7 py-4 rounded-full bg-nue-accent hover:bg-red-600 text-white font-display font-bold text-xs uppercase tracking-wider transition-all hover:scale-105 shadow-xl shadow-nue-accent/25 flex items-center justify-center gap-2">
-            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-            <span>Executive Visual PDF ↓</span>
-          </a>
-          <a href="/resume/Utkarsh_Seth_ATS_Certified_Resume.pdf" download="Utkarsh_Seth_ATS_Certified_Resume.pdf" class="w-full sm:w-auto px-7 py-4 rounded-full bg-white hover:bg-slate-200 text-black font-display font-bold text-xs uppercase tracking-wider transition-all hover:scale-105 flex items-center justify-center gap-2">
-            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-            <span>ATS Certified PDF ↓</span>
-          </a>
-          <a href="/resume/index.html" target="_blank" class="w-full sm:w-auto px-6 py-4 rounded-full border border-nue-border hover:border-white text-slate-300 hover:text-white font-mono text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-1.5">
-            <span>Web Resume</span>
-            <span>↗</span>
-          </a>
         </div>
       </div>
 
-    </div>
-  </section>
-
-  <!-- Editorial Contact Section -->
-  <section id="contact" class="py-28 text-center relative overflow-hidden">
-    <div class="max-w-4xl mx-auto px-6 sm:px-10 space-y-8 relative z-10">
-      
-      <span class="text-xs font-mono uppercase tracking-widest text-nue-accent block font-bold">Initiate Conversation</span>
-      <h2 class="text-5xl sm:text-7xl font-display font-black text-white uppercase tracking-tight">
-        Let’s Build <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400">Iconic Scale.</span>
-      </h2>
-      <p class="text-slate-300 text-base sm:text-lg max-w-xl mx-auto font-light leading-relaxed">
-        Available for executive discussions for VP / Head of Marketing, Brand Custodian, and Enterprise Marketing Advisory mandates.
-      </p>
-
-      <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
-        <a href="mailto:anshu.seth007@gmail.com" class="px-8 py-4 rounded-full bg-white hover:bg-slate-200 text-black font-display font-bold text-xs uppercase tracking-wider transition-all hover:scale-105 shadow-xl shadow-white/10">
-          anshu.seth007@gmail.com
-        </a>
-        <a href="tel:+919711133607" class="px-8 py-4 rounded-full border border-nue-border hover:border-white text-white font-mono text-xs uppercase tracking-wider transition-all">
-          +91 9711133607
-        </a>
+      <!-- Inverted Monument Wordmark -->
+      <div class="pt-8">
+        <div class="monument-footer-wordmark text-[#09090b] select-none">
+          UTKARSH SETH
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 text-sm font-bold text-[#09090b]/80">
+          <div class="flex flex-wrap gap-6">
+            <a href="tel:+919711133607" class="hover:text-[#09090b]">+91 9711133607</a>
+            <a href="https://linkedin.com/in/utkarshseth1" target="_blank" rel="noopener" class="hover:text-[#09090b]">LinkedIn ↗</a>
+            <a href="https://instagram.com/7enstrings" target="_blank" rel="noopener" class="hover:text-[#ff4d29]">@7enstrings ↗</a>
+            <a href="/resume/index.html" target="_blank" class="hover:text-[#09090b]">Web Resume ↗</a>
+          </div>
+          <div>Gurgaon, Haryana, India · © 2026</div>
+        </div>
       </div>
 
-      <div class="pt-10 flex flex-wrap items-center justify-center gap-8 text-xs font-mono text-slate-400">
-        <a href="https://linkedin.com/in/utkarshseth1" target="_blank" class="hover:text-white transition-colors">LinkedIn ↗</a>
-        <a href="https://instagram.com/7enstrings" target="_blank" class="hover:text-nue-accent transition-colors">Instagram @7enstrings ↗</a>
-        <a href="/resume/index.html" target="_blank" class="hover:text-white transition-colors">Web Resume ↗</a>
-        <span class="text-slate-600">·</span>
-        <span class="text-slate-500">Gurgaon, Haryana, India</span>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-8 border-t border-nue-border/60 text-center text-[11px] font-mono text-slate-500">
-    <div class="max-w-[1400px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div>© 2026 Utkarsh Seth. All rights reserved.</div>
-      <div>Designed with Nu-Editorial Aesthetic · Hosted on Vercel</div>
     </div>
   </footer>
 
+  <!-- Top-Layer Case Study Modal Dialog (Modern Web Guidance) -->
+  <dialog id="case-dialog" closedby="any" aria-labelledby="dialog-title">
+    <div class="p-6 sm:p-10 space-y-6">
+      <div class="flex items-start justify-between gap-4 pb-2">
+        <div>
+          <span id="dialog-tag" class="text-sm font-bold text-[#ff4d29] block mb-1"></span>
+          <h3 id="dialog-title" class="text-2xl sm:text-4xl font-black tracking-tight"></h3>
+        </div>
+        <button type="button" id="dialog-close-btn" aria-label="Close case study" class="px-4 py-2 bg-[#1a1a22] hover:bg-[#ff4d29] hover:text-[#09090b] text-sm font-bold transition-colors shrink-0">
+          Close [ESC]
+        </button>
+      </div>
+
+      <div class="aspect-[16/9] overflow-hidden bg-[#09090b]">
+        <img id="dialog-image" src="" alt="" class="w-full h-full object-cover">
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4 bg-[#09090b] p-5">
+        <div>
+          <div id="dialog-m1-val" class="text-2xl font-black text-[#f4f2ed]"></div>
+          <div id="dialog-m1-lbl" class="text-sm text-[#9e9da6]"></div>
+        </div>
+        <div>
+          <div id="dialog-m2-val" class="text-2xl font-black text-[#ff4d29]"></div>
+          <div id="dialog-m2-lbl" class="text-sm text-[#9e9da6]"></div>
+        </div>
+        <div>
+          <div class="text-sm font-bold text-[#d4af37]">Recognition</div>
+          <div id="dialog-award" class="text-sm text-[#f4f2ed] mt-0.5"></div>
+        </div>
+      </div>
+
+      <p id="dialog-summary" class="text-base text-[#f4f2ed] leading-relaxed"></p>
+
+      <div class="space-y-3">
+        <h4 class="text-base font-bold text-[#f4f2ed]">Strategic Execution &amp; Impact</h4>
+        <ul id="dialog-strategy" class="space-y-2 text-base text-[#d6d4ce] leading-relaxed"></ul>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Motion & 3D Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
