@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;700;900&display=swap');
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1584px;
+      height: 396px;
+      overflow: hidden;
+      background: #09090b;
+      color: #f4f2ed;
+      font-family: 'Chivo', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .canvas {
+      position: relative;
+      width: 1584px;
+      height: 396px;
+      background: #09090b;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 48px 72px;
+    }
+    /* Subtle architectural grid lines */
+    .grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(244, 242, 237, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(244, 242, 237, 0.04) 1px, transparent 1px);
+      background-size: 88px 88px;
+      pointer-events: none;
+    }
+    /* Subtle vermilion atmospheric glow on top-right */
+    .glow-right {
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 520px;
+      height: 520px;
+      border-radius: 9999px;
+      background: radial-gradient(circle, rgba(255, 77, 41, 0.18) 0%, rgba(9, 9, 11, 0) 70%);
+      pointer-events: none;
+    }
+    /* Left safe-zone indicator accent bar (leaves bottom-left clean for LinkedIn avatar) */
+    .top-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: #ff4d29;
+    }
+    .content {
+      position: relative;
+      z-index: 2;
+      width: 1020px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      text-align: right;
+      align-items: flex-end;
+    }
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #d4af37;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: #ff4d29;
+      display: inline-block;
+    }
+    h1 {
+      font-size: 62px;
+      font-weight: 900;
+      line-height: 0.94;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      color: #f4f2ed;
+    }
+    h1 span {
+      color: #ff4d29;
+    }
+    .metrics {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      padding-top: 8px;
+    }
+    .metric {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+    }
+    .metric-val {
+      font-size: 24px;
+      font-weight: 900;
+      color: #f4f2ed;
+      letter-spacing: -0.02em;
+    }
+    .metric-val.gold { color: #d4af37; }
+    .metric-val.accent { color: #ff4d29; }
+    .metric-lbl {
+      font-size: 13px;
+      font-weight: 700;
+      color: #9e9da6;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .divider {
+      width: 1px;
+      height: 36px;
+      background: rgba(244, 242, 237, 0.16);
+    }
+    .url-tag {
+      font-size: 15px;
+      font-weight: 700;
+      color: #d6d4ce;
+      letter-spacing: 0.04em;
+      padding: 8px 16px;
+      background: #141419;
+      border-left: 3px solid #ff4d29;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="top-bar"></div>
+    <div class="grid-bg"></div>
+    <div class="glow-right"></div>
+
+    <div class="content">
+      <div class="kicker">
+        <span>Marketing &amp; Brand Leader</span>
+        <span class="dot"></span>
+        <span>Samsung India · Vivo · Micromax</span>
+      </div>
+
+      <h1>SHAPING CULTURE. <span>SCALING P&amp;L.</span></h1>
+
+      <div class="metrics">
+        <div class="metric">
+          <span class="metric-val gold">9 METALS</span>
+          <span class="metric-lbl">Effie India 2025</span>
+        </div>
+        <div class="divider"></div>
+        <div class="metric">
+          <span class="metric-val">₹100 CR+</span>
+          <span class="metric-lbl">Media Scale</span>
+        </div>
+        <div class="divider"></div>
+        <div class="metric">
+          <span class="metric-val accent">350M+</span>
+          <span class="metric-lbl">#PlayGalaxy Reach</span>
+        </div>
+        <div class="divider"></div>
+        <div class="metric">
+          <span class="metric-val">CLIO BRONZE</span>
+          <span class="metric-lbl">Paris 2024 · Shorty Award</span>
+        </div>
+      </div>
+
+      <div class="url-tag">portfolio-utkarsh-seth.vercel.app</div>
+    </div>
+  </div>
+</body>
+</html>
